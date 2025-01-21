@@ -15,7 +15,7 @@ jobs:
         os: [ ubuntu-latest ]
 
     runs-on: ${{ matrix.os }}
-    environment: release
+
     permissions:
       id-token: write
     steps:
