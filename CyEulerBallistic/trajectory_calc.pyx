@@ -10,11 +10,11 @@
 from cython cimport final
 from libc.math cimport fabs, sin, cos, tan, atan, atan2
 # noinspection PyUnresolvedReferences
-from EulerBallistic.vector cimport CVector, add, sub, mag, mul_c, mul_v, neg, norm, mag
+from CyEulerBallistic.vector cimport CVector, add, sub, mag, mul_c, mul_v, neg, norm, mag
 # noinspection PyUnresolvedReferences
-from EulerBallistic.trajectory_data cimport CTrajFlag, TrajectoryData
+from CyEulerBallistic.trajectory_data cimport CTrajFlag, TrajectoryData
 # noinspection PyUnresolvedReferences
-from EulerBallistic.cy_euler cimport (
+from CyEulerBallistic.cy_euler cimport (
     Config_t,
     Wind_t,
     Atmosphere_t,

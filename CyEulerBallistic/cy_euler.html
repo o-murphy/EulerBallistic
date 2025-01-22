@@ -303,7 +303,7 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">002</span>: from cython cimport final</pre>
 <pre class="cython line score-0">&#xA0;<span class="">003</span>: from libc.stdlib cimport malloc, free</pre>
 <pre class="cython line score-0">&#xA0;<span class="">004</span>: from libc.math cimport fabs, pow, atan2, exp, sqrt, sin, cos</pre>
-<pre class="cython line score-0">&#xA0;<span class="">005</span>: from EulerBallistic.vector cimport CVector</pre>
+<pre class="cython line score-0">&#xA0;<span class="">005</span>: from CyEulerBallistic.vector cimport CVector</pre>
 <pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">006</span>: import warnings</pre>
 <pre class='cython code score-8 '>  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_ImportDottedModule</span>(__pyx_n_s_warnings, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
@@ -312,13 +312,13 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">007</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">008</span>: @final</pre>
 <pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">009</span>: cdef Config_t config_bind(object config):</pre>
-<pre class='cython code score-3 '>static struct __pyx_t_14EulerBallistic_8cy_euler_Config_t __pyx_f_14EulerBallistic_8cy_euler_config_bind(PyObject *__pyx_v_config) {
-  struct __pyx_t_14EulerBallistic_8cy_euler_Config_t __pyx_r;
+<pre class='cython code score-3 '>static struct __pyx_t_16CyEulerBallistic_8cy_euler_Config_t __pyx_f_16CyEulerBallistic_8cy_euler_config_bind(PyObject *__pyx_v_config) {
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_Config_t __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L1_error:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.cy_euler.config_bind", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.cy_euler.config_bind", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_pretend_to_initialize(&amp;__pyx_r);
   __pyx_L0:;
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
@@ -378,7 +378,7 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">019</span>:     )</pre>
 <pre class="cython line score-0">&#xA0;<span class="">020</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">021</span>: cdef double cy_get_calc_step(Config_t * config, double step = 0):</pre>
-<pre class='cython code score-0 '>static double __pyx_f_14EulerBallistic_8cy_euler_cy_get_calc_step(struct __pyx_t_14EulerBallistic_8cy_euler_Config_t *__pyx_v_config, struct __pyx_opt_args_14EulerBallistic_8cy_euler_cy_get_calc_step *__pyx_optional_args) {
+<pre class='cython code score-0 '>static double __pyx_f_16CyEulerBallistic_8cy_euler_cy_get_calc_step(struct __pyx_t_16CyEulerBallistic_8cy_euler_Config_t *__pyx_v_config, struct __pyx_opt_args_16CyEulerBallistic_8cy_euler_cy_get_calc_step *__pyx_optional_args) {
   double __pyx_v_step = ((double)0.0);
   double __pyx_v_preferred_step;
   double __pyx_r;
@@ -416,17 +416,17 @@ body.cython { font-family: courier; font-size: 12; }
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">026</span>: </pre>
 <pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">027</span>: cdef MachList_t cy_table_to_mach(list[object] data):</pre>
-<pre class='cython code score-4 '>static struct __pyx_t_14EulerBallistic_8cy_euler_MachList_t __pyx_f_14EulerBallistic_8cy_euler_cy_table_to_mach(PyObject *__pyx_v_data) {
+<pre class='cython code score-4 '>static struct __pyx_t_16CyEulerBallistic_8cy_euler_MachList_t __pyx_f_16CyEulerBallistic_8cy_euler_cy_table_to_mach(PyObject *__pyx_v_data) {
   int __pyx_v_data_len;
   double *__pyx_v_result;
   int __pyx_v_i;
   PyObject *__pyx_v_dp = 0;
-  struct __pyx_t_14EulerBallistic_8cy_euler_MachList_t __pyx_r;
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_MachList_t __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L1_error:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.cy_euler.cy_table_to_mach", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.cy_euler.cy_table_to_mach", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_pretend_to_initialize(&amp;__pyx_r);
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_dp);
@@ -494,7 +494,7 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">044</span>:     )</pre>
 <pre class="cython line score-0">&#xA0;<span class="">045</span>: </pre>
 <pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">046</span>: cdef Curve_t cy_calculate_curve(list[object] data_points):</pre>
-<pre class='cython code score-6 '>static struct __pyx_t_14EulerBallistic_8cy_euler_Curve_t __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_curve(PyObject *__pyx_v_data_points) {
+<pre class='cython code score-6 '>static struct __pyx_t_16CyEulerBallistic_8cy_euler_Curve_t __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_curve(PyObject *__pyx_v_data_points) {
   double __pyx_v_rate;
   double __pyx_v_x1;
   double __pyx_v_x2;
@@ -505,13 +505,13 @@ body.cython { font-family: courier; font-size: 12; }
   double __pyx_v_a;
   double __pyx_v_b;
   double __pyx_v_c;
-  struct __pyx_t_14EulerBallistic_8cy_euler_Curve_t __pyx_v_curve;
-  struct __pyx_t_14EulerBallistic_8cy_euler_CurvePoint_t *__pyx_v_curve_points;
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_Curve_t __pyx_v_curve;
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_CurvePoint_t *__pyx_v_curve_points;
   int __pyx_v_i;
   int __pyx_v_num_points;
   int __pyx_v_len_data_points;
   int __pyx_v_len_data_range;
-  struct __pyx_t_14EulerBallistic_8cy_euler_Curve_t __pyx_r;
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_Curve_t __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L1_error:;
@@ -519,7 +519,7 @@ body.cython { font-family: courier; font-size: 12; }
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.cy_euler.cy_calculate_curve", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.cy_euler.cy_calculate_curve", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_pretend_to_initialize(&amp;__pyx_r);
   __pyx_L0:;
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
@@ -542,7 +542,7 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">054</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">055</span>:     # Allocate memory for the curve_points array</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">056</span>:     curve_points = &lt;CurvePoint_t *&gt; malloc(len_data_points * sizeof(CurvePoint_t))</pre>
-<pre class='cython code score-0 '>  __pyx_v_curve_points = ((struct __pyx_t_14EulerBallistic_8cy_euler_CurvePoint_t *)malloc((__pyx_v_len_data_points * (sizeof(struct __pyx_t_14EulerBallistic_8cy_euler_CurvePoint_t)))));
+<pre class='cython code score-0 '>  __pyx_v_curve_points = ((struct __pyx_t_16CyEulerBallistic_8cy_euler_CurvePoint_t *)malloc((__pyx_v_len_data_points * (sizeof(struct __pyx_t_16CyEulerBallistic_8cy_euler_CurvePoint_t)))));
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">057</span>:     if curve_points is NULL:</pre>
 <pre class='cython code score-0 '>  __pyx_t_2 = (__pyx_v_curve_points == NULL);
   if (unlikely(__pyx_t_2)) {
@@ -860,13 +860,13 @@ body.cython { font-family: courier; font-size: 12; }
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">090</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">091</span>: cdef double cy_calculate_by_curve_and_mach_list(MachList_t *mach_list, Curve_t *curve, double mach):</pre>
-<pre class='cython code score-0 '>static double __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_by_curve_and_mach_list(struct __pyx_t_14EulerBallistic_8cy_euler_MachList_t *__pyx_v_mach_list, struct __pyx_t_14EulerBallistic_8cy_euler_Curve_t *__pyx_v_curve, double __pyx_v_mach) {
+<pre class='cython code score-0 '>static double __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_by_curve_and_mach_list(struct __pyx_t_16CyEulerBallistic_8cy_euler_MachList_t *__pyx_v_mach_list, struct __pyx_t_16CyEulerBallistic_8cy_euler_Curve_t *__pyx_v_curve, double __pyx_v_mach) {
   int __pyx_v_num_points;
   int __pyx_v_mlo;
   int __pyx_v_mhi;
   int __pyx_v_mid;
   int __pyx_v_m;
-  struct __pyx_t_14EulerBallistic_8cy_euler_CurvePoint_t __pyx_v_curve_m;
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_CurvePoint_t __pyx_v_curve_m;
   double __pyx_r;
 /* … */
   /* function exit code */
@@ -935,7 +935,7 @@ body.cython { font-family: courier; font-size: 12; }
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">121</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">122</span>: cdef double cy_spin_drift(ShotData_t * t, double time):</pre>
-<pre class='cython code score-0 '>static double __pyx_f_14EulerBallistic_8cy_euler_cy_spin_drift(struct __pyx_t_14EulerBallistic_8cy_euler_ShotData_t *__pyx_v_t, double __pyx_v_time) {
+<pre class='cython code score-0 '>static double __pyx_f_16CyEulerBallistic_8cy_euler_cy_spin_drift(struct __pyx_t_16CyEulerBallistic_8cy_euler_ShotData_t *__pyx_v_t, double __pyx_v_time) {
   int __pyx_v_sign;
   double __pyx_r;
 /* … */
@@ -969,13 +969,13 @@ body.cython { font-family: courier; font-size: 12; }
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">132</span>: </pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">133</span>: cdef double cy_drag_by_mach(ShotData_t * t, double mach):</pre>
-<pre class='cython code score-2 '>static double __pyx_f_14EulerBallistic_8cy_euler_cy_drag_by_mach(struct __pyx_t_14EulerBallistic_8cy_euler_ShotData_t *__pyx_v_t, double __pyx_v_mach) {
+<pre class='cython code score-2 '>static double __pyx_f_16CyEulerBallistic_8cy_euler_cy_drag_by_mach(struct __pyx_t_16CyEulerBallistic_8cy_euler_ShotData_t *__pyx_v_t, double __pyx_v_mach) {
   double __pyx_v_cd;
   double __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L1_error:;
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.cy_euler.cy_drag_by_mach", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.cy_euler.cy_drag_by_mach", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   return __pyx_r;
@@ -988,14 +988,14 @@ body.cython { font-family: courier; font-size: 12; }
 <pre class="cython line score-0">&#xA0;<span class="">139</span>:     Thus: The magic constant found here = StandardDensity * pi / (4 * 2 * 144)</pre>
 <pre class="cython line score-0">&#xA0;<span class="">140</span>:     """</pre>
 <pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">141</span>:     cdef double cd = cy_calculate_by_curve_and_mach_list(&amp;t.mach_list, &amp;t.curve, mach)</pre>
-<pre class='cython code score-5 '>  __pyx_t_1 = __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_by_curve_and_mach_list((&amp;__pyx_v_t-&gt;mach_list), (&amp;__pyx_v_t-&gt;curve), __pyx_v_mach); if (unlikely(__pyx_t_1 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 141, __pyx_L1_error)</span>
+<pre class='cython code score-5 '>  __pyx_t_1 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_by_curve_and_mach_list((&amp;__pyx_v_t-&gt;mach_list), (&amp;__pyx_v_t-&gt;curve), __pyx_v_mach); if (unlikely(__pyx_t_1 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 141, __pyx_L1_error)</span>
   __pyx_v_cd = __pyx_t_1;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">142</span>:     return cd * 2.08551e-04 / t.bc</pre>
 <pre class='cython code score-0 '>  __pyx_r = ((__pyx_v_cd * 2.08551e-04) / __pyx_v_t-&gt;bc);
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">143</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">144</span>: cdef void cy_update_stability_coefficient(ShotData_t * t):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_8cy_euler_cy_update_stability_coefficient(struct __pyx_t_14EulerBallistic_8cy_euler_ShotData_t *__pyx_v_t) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_8cy_euler_cy_update_stability_coefficient(struct __pyx_t_16CyEulerBallistic_8cy_euler_ShotData_t *__pyx_v_t) {
   double __pyx_v_twist_rate;
   double __pyx_v_length;
   double __pyx_v_sd;
@@ -1049,7 +1049,7 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">157</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">158</span>: # Function to free memory for Curve_t</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">159</span>: cdef void free_curve(Curve_t *curve):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_8cy_euler_free_curve(struct __pyx_t_14EulerBallistic_8cy_euler_Curve_t *__pyx_v_curve) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_8cy_euler_free_curve(struct __pyx_t_16CyEulerBallistic_8cy_euler_Curve_t *__pyx_v_curve) {
 /* … */
   /* function exit code */
 }
@@ -1063,7 +1063,7 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">162</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">163</span>: # Function to free memory for MachList_t</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">164</span>: cdef void free_mach_list(MachList_t *mach_list):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_8cy_euler_free_mach_list(struct __pyx_t_14EulerBallistic_8cy_euler_MachList_t *__pyx_v_mach_list) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_8cy_euler_free_mach_list(struct __pyx_t_16CyEulerBallistic_8cy_euler_MachList_t *__pyx_v_mach_list) {
 /* … */
   /* function exit code */
 }
@@ -1077,22 +1077,22 @@ body.cython { font-family: courier; font-size: 12; }
 </pre><pre class="cython line score-0">&#xA0;<span class="">167</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">168</span>: # Function to free memory for ShotData_t</pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">169</span>: cdef void free_trajectory(ShotData_t *t):</pre>
-<pre class='cython code score-2 '>static void __pyx_f_14EulerBallistic_8cy_euler_free_trajectory(struct __pyx_t_14EulerBallistic_8cy_euler_ShotData_t *__pyx_v_t) {
+<pre class='cython code score-2 '>static void __pyx_f_16CyEulerBallistic_8cy_euler_free_trajectory(struct __pyx_t_16CyEulerBallistic_8cy_euler_ShotData_t *__pyx_v_t) {
 /* … */
   /* function exit code */
   goto __pyx_L0;
   __pyx_L1_error:;
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.cy_euler.free_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.cy_euler.free_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
 }
 </pre><pre class="cython line score-0">&#xA0;<span class="">170</span>:     # Free memory for curve and mach_list</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">171</span>:     free_curve(&amp;t.curve)</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_8cy_euler_free_curve((&amp;__pyx_v_t-&gt;curve));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_8cy_euler_free_curve((&amp;__pyx_v_t-&gt;curve));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">172</span>:     free_mach_list(&amp;t.mach_list)</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_8cy_euler_free_mach_list((&amp;__pyx_v_t-&gt;mach_list));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_8cy_euler_free_mach_list((&amp;__pyx_v_t-&gt;mach_list));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 172, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">173</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">174</span>: cdef double cy_get_correction(double distance, double offset):</pre>
-<pre class='cython code score-0 '>static double __pyx_f_14EulerBallistic_8cy_euler_cy_get_correction(double __pyx_v_distance, double __pyx_v_offset) {
+<pre class='cython code score-0 '>static double __pyx_f_16CyEulerBallistic_8cy_euler_cy_get_correction(double __pyx_v_distance, double __pyx_v_offset) {
   double __pyx_r;
 /* … */
   /* function exit code */
@@ -1112,7 +1112,7 @@ body.cython { font-family: courier; font-size: 12; }
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">178</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">179</span>: cdef double cy_calculate_energy(double bullet_weight, double velocity):</pre>
-<pre class='cython code score-0 '>static double __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_energy(double __pyx_v_bullet_weight, double __pyx_v_velocity) {
+<pre class='cython code score-0 '>static double __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_energy(double __pyx_v_bullet_weight, double __pyx_v_velocity) {
   double __pyx_r;
 /* … */
   /* function exit code */
@@ -1124,7 +1124,7 @@ body.cython { font-family: courier; font-size: 12; }
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">181</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">182</span>: cdef double cy_calculate_ogw(double bullet_weight, double velocity):</pre>
-<pre class='cython code score-0 '>static double __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_ogw(double __pyx_v_bullet_weight, double __pyx_v_velocity) {
+<pre class='cython code score-0 '>static double __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_ogw(double __pyx_v_bullet_weight, double __pyx_v_velocity) {
   double __pyx_r;
 /* … */
   /* function exit code */
@@ -1136,17 +1136,17 @@ body.cython { font-family: courier; font-size: 12; }
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">184</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">185</span>: cdef double cDegreesFtoR = 459.67</pre>
-<pre class='cython code score-0 '>  __pyx_v_14EulerBallistic_8cy_euler_cDegreesFtoR = 459.67;
+<pre class='cython code score-0 '>  __pyx_v_16CyEulerBallistic_8cy_euler_cDegreesFtoR = 459.67;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">186</span>: cdef double cSpeedOfSoundImperial = 49.0223</pre>
-<pre class='cython code score-0 '>  __pyx_v_14EulerBallistic_8cy_euler_cSpeedOfSoundImperial = 49.0223;
+<pre class='cython code score-0 '>  __pyx_v_16CyEulerBallistic_8cy_euler_cSpeedOfSoundImperial = 49.0223;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">187</span>: cdef double cLapseRateImperial = -3.56616e-03</pre>
-<pre class='cython code score-0 '>  __pyx_v_14EulerBallistic_8cy_euler_cLapseRateImperial = -3.56616e-03;
+<pre class='cython code score-0 '>  __pyx_v_16CyEulerBallistic_8cy_euler_cLapseRateImperial = -3.56616e-03;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">188</span>: cdef double cLowestTempF = -130</pre>
-<pre class='cython code score-0 '>  __pyx_v_14EulerBallistic_8cy_euler_cLowestTempF = -130.0;
+<pre class='cython code score-0 '>  __pyx_v_16CyEulerBallistic_8cy_euler_cLowestTempF = -130.0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">189</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">190</span>: # Function to calculate density factor and Mach at altitude</pre>
 <pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">191</span>: cdef void update_density_factor_and_mach_for_altitude(</pre>
-<pre class='cython code score-7 '>static void __pyx_f_14EulerBallistic_8cy_euler_update_density_factor_and_mach_for_altitude(struct __pyx_t_14EulerBallistic_8cy_euler_Atmosphere_t *__pyx_v_atmo, double __pyx_v_altitude, double *__pyx_v_density_ratio, double *__pyx_v_mach) {
+<pre class='cython code score-7 '>static void __pyx_f_16CyEulerBallistic_8cy_euler_update_density_factor_and_mach_for_altitude(struct __pyx_t_16CyEulerBallistic_8cy_euler_Atmosphere_t *__pyx_v_atmo, double __pyx_v_altitude, double *__pyx_v_density_ratio, double *__pyx_v_mach) {
   double __pyx_v_fahrenheit;
 /* … */
   /* function exit code */
@@ -1157,7 +1157,7 @@ body.cython { font-family: courier; font-size: 12; }
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_8);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_9);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.cy_euler.update_density_factor_and_mach_for_altitude", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.cy_euler.update_density_factor_and_mach_for_altitude", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
 }
@@ -1185,15 +1185,15 @@ body.cython { font-family: courier; font-size: 12; }
 <pre class='cython code score-0 '>  /*else*/ {
     (__pyx_v_density_ratio[0]) = exp(((-__pyx_v_altitude) / 34112.0));
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">204</span>:         fahrenheit = (altitude - atmo._a0) * cLapseRateImperial + atmo._t0</pre>
-<pre class='cython code score-0 '>    __pyx_v_fahrenheit = (((__pyx_v_altitude - __pyx_v_atmo-&gt;_a0) * __pyx_v_14EulerBallistic_8cy_euler_cLapseRateImperial) + __pyx_v_atmo-&gt;_t0);
+<pre class='cython code score-0 '>    __pyx_v_fahrenheit = (((__pyx_v_altitude - __pyx_v_atmo-&gt;_a0) * __pyx_v_16CyEulerBallistic_8cy_euler_cLapseRateImperial) + __pyx_v_atmo-&gt;_t0);
 </pre><pre class="cython line score-0">&#xA0;<span class="">205</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">206</span>:         if fahrenheit &lt; cLowestTempF:</pre>
-<pre class='cython code score-0 '>    __pyx_t_1 = (__pyx_v_fahrenheit &lt; __pyx_v_14EulerBallistic_8cy_euler_cLowestTempF);
+<pre class='cython code score-0 '>    __pyx_t_1 = (__pyx_v_fahrenheit &lt; __pyx_v_16CyEulerBallistic_8cy_euler_cLowestTempF);
     if (__pyx_t_1) {
 /* … */
     }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">207</span>:             fahrenheit = cLowestTempF</pre>
-<pre class='cython code score-0 '>      __pyx_v_fahrenheit = __pyx_v_14EulerBallistic_8cy_euler_cLowestTempF;
+<pre class='cython code score-0 '>      __pyx_v_fahrenheit = __pyx_v_16CyEulerBallistic_8cy_euler_cLowestTempF;
 </pre><pre class="cython line score-34" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">208</span>:             warnings.warn(f"Reached minimum temperature limit. Adjusted to {cLowestTempF}°F "</pre>
 <pre class='cython code score-34 '>      <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_4, __pyx_n_s_warnings);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 208, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
@@ -1208,7 +1208,7 @@ body.cython { font-family: courier; font-size: 12; }
       __pyx_t_6 += 47;
       <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_u_Reached_minimum_temperature_limi);
       <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_4, 0, __pyx_kp_u_Reached_minimum_temperature_limi);
-      __pyx_t_8 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_14EulerBallistic_8cy_euler_cLowestTempF);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 208, __pyx_L1_error)</span>
+      __pyx_t_8 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_16CyEulerBallistic_8cy_euler_cLowestTempF);<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 208, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
       __pyx_t_9 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_t_8, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 208, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_9);
@@ -1253,12 +1253,12 @@ body.cython { font-family: courier; font-size: 12; }
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">210</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">211</span>:         if fahrenheit &lt; -cDegreesFtoR:</pre>
-<pre class='cython code score-0 '>    __pyx_t_1 = (__pyx_v_fahrenheit &lt; (-__pyx_v_14EulerBallistic_8cy_euler_cDegreesFtoR));
+<pre class='cython code score-0 '>    __pyx_t_1 = (__pyx_v_fahrenheit &lt; (-__pyx_v_16CyEulerBallistic_8cy_euler_cDegreesFtoR));
     if (__pyx_t_1) {
 /* … */
     }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">212</span>:             fahrenheit = -cDegreesFtoR</pre>
-<pre class='cython code score-0 '>      __pyx_v_fahrenheit = (-__pyx_v_14EulerBallistic_8cy_euler_cDegreesFtoR);
+<pre class='cython code score-0 '>      __pyx_v_fahrenheit = (-__pyx_v_16CyEulerBallistic_8cy_euler_cDegreesFtoR);
 </pre><pre class="cython line score-34" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">213</span>:             warnings.warn(f"Invalid temperature: {fahrenheit}°F. Adjusted to absolute zero "</pre>
 <pre class='cython code score-34 '>      <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_5, __pyx_n_s_warnings);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 213, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
@@ -1293,7 +1293,7 @@ body.cython { font-family: courier; font-size: 12; }
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
 </pre><pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">214</span>:                           f"It must be &gt;= {-cDegreesFtoR} to avoid a domain error."</pre>
-<pre class='cython code score-17 '>      __pyx_t_8 = <span class='py_c_api'>PyFloat_FromDouble</span>((-__pyx_v_14EulerBallistic_8cy_euler_cDegreesFtoR));<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 214, __pyx_L1_error)</span>
+<pre class='cython code score-17 '>      __pyx_t_8 = <span class='py_c_api'>PyFloat_FromDouble</span>((-__pyx_v_16CyEulerBallistic_8cy_euler_cDegreesFtoR));<span class='error_goto'> if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 214, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_8);
       __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_FormatSimple</span>(__pyx_t_8, __pyx_empty_unicode);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 214, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
@@ -1334,15 +1334,15 @@ body.cython { font-family: courier; font-size: 12; }
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">216</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">217</span>:         mach[0] = sqrt(fahrenheit + cDegreesFtoR) * cSpeedOfSoundImperial</pre>
-<pre class='cython code score-0 '>    (__pyx_v_mach[0]) = (sqrt((__pyx_v_fahrenheit + __pyx_v_14EulerBallistic_8cy_euler_cDegreesFtoR)) * __pyx_v_14EulerBallistic_8cy_euler_cSpeedOfSoundImperial);
+<pre class='cython code score-0 '>    (__pyx_v_mach[0]) = (sqrt((__pyx_v_fahrenheit + __pyx_v_16CyEulerBallistic_8cy_euler_cDegreesFtoR)) * __pyx_v_16CyEulerBallistic_8cy_euler_cSpeedOfSoundImperial);
   }
   __pyx_L3:;
 </pre><pre class="cython line score-0">&#xA0;<span class="">218</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">219</span>: cdef CVector wind_to_c_vector(Wind_t * w):</pre>
-<pre class='cython code score-0 '>static struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_f_14EulerBallistic_8cy_euler_wind_to_c_vector(struct __pyx_t_14EulerBallistic_8cy_euler_Wind_t *__pyx_v_w) {
+<pre class='cython code score-0 '>static struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_f_16CyEulerBallistic_8cy_euler_wind_to_c_vector(struct __pyx_t_16CyEulerBallistic_8cy_euler_Wind_t *__pyx_v_w) {
   double __pyx_v_range_component;
   double __pyx_v_cross_component;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_r;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L0:;

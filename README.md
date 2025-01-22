@@ -1,4 +1,4 @@
-# EulerBallistic
+# CyEulerBallistic
 LGPL library for small arms ballistic calculations based on point-mass (3 DoF) plus spin drift.
 The fork of py_ballisticcalc.exts that can be used as side-package
 
@@ -14,7 +14,7 @@ The fork of py_ballisticcalc.exts that can be used as side-package
 # Installation
 
 ```shell
-pip install EulerBallistic
+pip install CyEulerBallistic
 ```
 
 # Usage

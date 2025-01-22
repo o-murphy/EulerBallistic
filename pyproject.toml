@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "EulerBallistic"
+name = "CyEulerBallistic"
 version = "2.1.0b3"
 
 authors = [
@@ -36,17 +36,17 @@ classifiers = [
 dependencies = ["py_ballisticcalc==2.1.0b3"]
 
 [project.urls]
-"Homepage" = "https://github.com/o-murphy/EulerBallistic"
-"Bug Reports" = "https://github.com/o-murphy/EulerBallistic/issues"
-"Source" = "https://github.com/o-murphy/EulerBallistic"
+"Homepage" = "https://github.com/o-murphy/CyEulerBallistic"
+"Bug Reports" = "https://github.com/o-murphy/CyEulerBallistic/issues"
+"Source" = "https://github.com/o-murphy/CyEulerBallistic"
 
 [tool.setuptools]
-py-modules = ["EulerBallistic"]
+py-modules = ["CyEulerBallistic"]
 
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["EulerBallistic*"]
+include = ["CyEulerBallistic*"]
 
 [project.optional-dependencies]
 dev = ['cython', 'build', 'setuptools', 'cibuildwheel', 'pytest', 'mypy', 'pylint']

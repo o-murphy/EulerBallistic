@@ -1,4 +1,4 @@
-from EulerBallistic.vector cimport CVector
+from CyEulerBallistic.vector cimport CVector
 
 cdef struct Config_t:
     double max_calc_step_size_feet

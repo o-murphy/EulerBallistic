@@ -6,7 +6,7 @@ from py_ballisticcalc import (
     DragModel, Ammo, Weapon, Shot, Wind, Atmo, TableG7, RangeError,
 )
 from py_ballisticcalc.unit import *
-from EulerBallistic import EulerCalculator
+from CyEulerBallistic import EulerCalculator
 
 
 class TestComputer(unittest.TestCase):

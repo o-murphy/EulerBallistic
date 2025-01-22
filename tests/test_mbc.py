@@ -3,7 +3,7 @@
 import unittest
 from py_ballisticcalc import *
 
-from EulerBallistic import EulerCalculator
+from CyEulerBallistic import EulerCalculator
 
 
 class TestMBC(unittest.TestCase):

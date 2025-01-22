@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from typing_extensions import Union, List, Optional
 
 # pylint: disable=import-error,no-name-in-module,wildcard-import
-from EulerBallistic.trajectory_calc import EulerTrajectoryCalc
+from CyEulerBallistic.trajectory_calc import EulerTrajectoryCalc
 from py_ballisticcalc.conditions import Shot
 from py_ballisticcalc.drag_model import DragDataPoint
 from py_ballisticcalc.trajectory_data import HitResult

@@ -1,7 +1,7 @@
 from timeit import timeit
 from py_ballisticcalc import *
 from py_ballisticcalc.logger import logger
-from EulerBallistic import EulerCalculator
+from CyEulerBallistic import EulerCalculator
 import logging
 
 logger.setLevel(logging.DEBUG)

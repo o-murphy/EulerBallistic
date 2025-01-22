@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""setup.py script for EulerBallistic library"""
+"""setup.py script for CyEulerBallistic library"""
 from setuptools import setup, Extension
 try:
     from Cython.Build import cythonize
@@ -34,8 +34,8 @@ extension_names = [
 ]
 
 extensions = [
-    Extension('EulerBallistic.' + name,
-              ['EulerBallistic/' + name + '.pyx'])
+    Extension('CyEulerBallistic.' + name,
+              ['CyEulerBallistic/' + name + '.pyx'])
     for name in extension_names
 ]
 

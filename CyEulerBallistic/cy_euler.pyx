@@ -2,7 +2,7 @@
 from cython cimport final
 from libc.stdlib cimport malloc, free
 from libc.math cimport fabs, pow, atan2, exp, sqrt, sin, cos
-from EulerBallistic.vector cimport CVector
+from CyEulerBallistic.vector cimport CVector
 import warnings
 
 @final

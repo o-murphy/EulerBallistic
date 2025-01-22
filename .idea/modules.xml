@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/EulerBallistic.iml" filepath="$PROJECT_DIR$/.idea/EulerBallistic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CyEulerBallistic.iml" filepath="$PROJECT_DIR$/.idea/CyEulerBallistic.iml" />
     </modules>
   </component>
 </project>

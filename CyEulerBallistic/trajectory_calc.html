@@ -311,11 +311,11 @@ body.cython { font-family: courier; font-size: 12; }
 <pre class="cython line score-0">&#xA0;<span class="">010</span>: from cython cimport final</pre>
 <pre class="cython line score-0">&#xA0;<span class="">011</span>: from libc.math cimport fabs, sin, cos, tan, atan, atan2</pre>
 <pre class="cython line score-0">&#xA0;<span class="">012</span>: # noinspection PyUnresolvedReferences</pre>
-<pre class="cython line score-0">&#xA0;<span class="">013</span>: from EulerBallistic.vector cimport CVector, add, sub, mag, mul_c, mul_v, neg, norm, mag</pre>
+<pre class="cython line score-0">&#xA0;<span class="">013</span>: from CyEulerBallistic.vector cimport CVector, add, sub, mag, mul_c, mul_v, neg, norm, mag</pre>
 <pre class="cython line score-0">&#xA0;<span class="">014</span>: # noinspection PyUnresolvedReferences</pre>
-<pre class="cython line score-0">&#xA0;<span class="">015</span>: from EulerBallistic.trajectory_data cimport CTrajFlag, TrajectoryData</pre>
+<pre class="cython line score-0">&#xA0;<span class="">015</span>: from CyEulerBallistic.trajectory_data cimport CTrajFlag, TrajectoryData</pre>
 <pre class="cython line score-0">&#xA0;<span class="">016</span>: # noinspection PyUnresolvedReferences</pre>
-<pre class="cython line score-0">&#xA0;<span class="">017</span>: from EulerBallistic.cy_euler cimport (</pre>
+<pre class="cython line score-0">&#xA0;<span class="">017</span>: from CyEulerBallistic.cy_euler cimport (</pre>
 <pre class="cython line score-0">&#xA0;<span class="">018</span>:     Config_t,</pre>
 <pre class="cython line score-0">&#xA0;<span class="">019</span>:     Wind_t,</pre>
 <pre class="cython line score-0">&#xA0;<span class="">020</span>:     Atmosphere_t,</pre>
@@ -449,9 +449,9 @@ body.cython { font-family: courier; font-size: 12; }
 <pre class="cython line score-0">&#xA0;<span class="">049</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">050</span>: @final</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">051</span>: cdef class _TrajectoryDataFilter:</pre>
-<pre class='cython code score-0 '>struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter {
+<pre class='cython code score-0 '>struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter {
   PyObject_HEAD
-  struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_vtab;
+  struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_vtab;
   int filter;
   int current_flag;
   int seen_zero;
@@ -464,25 +464,25 @@ body.cython { font-family: courier; font-size: 12; }
   double look_angle;
 };
 /* … */
-struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter {
-  void (*setup_seen_zero)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double, double);
-  void (*clear_current_flag)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
-  int (*should_record)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_14EulerBallistic_6vector_CVector, double, double, double, double);
-  int (*should_break)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
-  int (*check_next_range)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
-  void (*check_next_time)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double);
-  void (*check_mach_crossing)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
-  void (*check_zero_crossing)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_14EulerBallistic_6vector_CVector);
+struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter {
+  void (*setup_seen_zero)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double, double);
+  void (*clear_current_flag)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
+  int (*should_record)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_16CyEulerBallistic_6vector_CVector, double, double, double, double);
+  int (*should_break)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
+  int (*check_next_range)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
+  void (*check_next_time)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double);
+  void (*check_mach_crossing)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
+  void (*check_zero_crossing)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_16CyEulerBallistic_6vector_CVector);
 };
-static struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_vtabptr_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter;
-static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_setup_seen_zero(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double, double);
-static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_clear_current_flag(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
-static int __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_record(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_14EulerBallistic_6vector_CVector, double, double, double, double);
-static int __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_break(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
-static int __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_range(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
-static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_time(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double);
-static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_mach_crossing(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
-static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_zero_crossing(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_14EulerBallistic_6vector_CVector);
+static struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_vtabptr_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter;
+static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_setup_seen_zero(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double, double);
+static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_clear_current_flag(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
+static int __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_record(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_16CyEulerBallistic_6vector_CVector, double, double, double, double);
+static int __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_break(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *);
+static int __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_range(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
+static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_time(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double);
+static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_mach_crossing(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, double, double);
+static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_zero_crossing(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *, struct __pyx_t_16CyEulerBallistic_6vector_CVector);
 
 </pre><pre class="cython line score-0">&#xA0;<span class="">052</span>:     cdef:</pre>
 <pre class="cython line score-0">&#xA0;<span class="">053</span>:         int filter, current_flag, seen_zero</pre>
@@ -491,8 +491,8 @@ static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_c
 <pre class="cython line score-0">&#xA0;<span class="">056</span>: </pre>
 <pre class="cython line score-85" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">057</span>:     def __cinit__(_TrajectoryDataFilter self,</pre>
 <pre class='cython code score-85 '>/* Python wrapper */
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_filter_flags;
   int __pyx_v_ranges_length;
   double __pyx_v_time_step;
@@ -583,11 +583,11 @@ static int __pyx_pw_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_1
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_VARARGS</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._TrajectoryDataFilter.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._TrajectoryDataFilter.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter___cinit__(((struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *)__pyx_v_self), __pyx_v_filter_flags, __pyx_v_ranges_length, __pyx_v_time_step);
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter___cinit__(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *)__pyx_v_self), __pyx_v_filter_flags, __pyx_v_ranges_length, __pyx_v_time_step);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -603,7 +603,7 @@ static int __pyx_pw_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_1
   return __pyx_r;
 }
 
-static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter___cinit__(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, int __pyx_v_filter_flags, int __pyx_v_ranges_length, double __pyx_v_time_step) {
+static int __pyx_pf_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter___cinit__(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, int __pyx_v_filter_flags, int __pyx_v_ranges_length, double __pyx_v_time_step) {
   int __pyx_r;
 /* … */
   /* function exit code */
@@ -614,9 +614,9 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">059</span>:         self.filter = filter_flags</pre>
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;filter = __pyx_v_filter_flags;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">060</span>:         self.current_flag = CTrajFlag.NONE</pre>
-<pre class='cython code score-0 '>  __pyx_v_self-&gt;current_flag = __pyx_e_14EulerBallistic_15trajectory_data_NONE;
+<pre class='cython code score-0 '>  __pyx_v_self-&gt;current_flag = __pyx_e_16CyEulerBallistic_15trajectory_data_NONE;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">061</span>:         self.seen_zero = CTrajFlag.NONE</pre>
-<pre class='cython code score-0 '>  __pyx_v_self-&gt;seen_zero = __pyx_e_14EulerBallistic_15trajectory_data_NONE;
+<pre class='cython code score-0 '>  __pyx_v_self-&gt;seen_zero = __pyx_e_16CyEulerBallistic_15trajectory_data_NONE;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">062</span>:         self.time_step = time_step</pre>
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;time_step = __pyx_v_time_step;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">063</span>:         self.current_item = 0</pre>
@@ -633,7 +633,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;look_angle = 0.0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">069</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">070</span>:     cdef void setup_seen_zero(_TrajectoryDataFilter self, double height, double barrel_elevation, double look_angle):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_setup_seen_zero(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_height, double __pyx_v_barrel_elevation, double __pyx_v_look_angle) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_setup_seen_zero(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_height, double __pyx_v_barrel_elevation, double __pyx_v_look_angle) {
 /* … */
   /* function exit code */
 }
@@ -644,7 +644,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
     goto __pyx_L3;
   }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">072</span>:             self.seen_zero |= CTrajFlag.ZERO_UP</pre>
-<pre class='cython code score-0 '>    __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_14EulerBallistic_15trajectory_data_ZERO_UP);
+<pre class='cython code score-0 '>    __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_UP);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">073</span>:         elif height &lt; 0 and barrel_elevation &lt; look_angle:</pre>
 <pre class='cython code score-0 '>  __pyx_t_2 = (__pyx_v_height &lt; 0.0);
   if (__pyx_t_2) {
@@ -660,25 +660,25 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
   }
   __pyx_L3:;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">074</span>:             self.seen_zero |= CTrajFlag.ZERO_DOWN</pre>
-<pre class='cython code score-0 '>    __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_14EulerBallistic_15trajectory_data_ZERO_DOWN);
+<pre class='cython code score-0 '>    __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_DOWN);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">075</span>:         self.look_angle = look_angle</pre>
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;look_angle = __pyx_v_look_angle;
 </pre><pre class="cython line score-0">&#xA0;<span class="">076</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">077</span>:     cdef void clear_current_flag(_TrajectoryDataFilter self):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_clear_current_flag(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_clear_current_flag(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self) {
 /* … */
   /* function exit code */
 }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">078</span>:         self.current_flag = CTrajFlag.NONE</pre>
-<pre class='cython code score-0 '>  __pyx_v_self-&gt;current_flag = __pyx_e_14EulerBallistic_15trajectory_data_NONE;
+<pre class='cython code score-0 '>  __pyx_v_self-&gt;current_flag = __pyx_e_16CyEulerBallistic_15trajectory_data_NONE;
 </pre><pre class="cython line score-0">&#xA0;<span class="">079</span>: </pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">080</span>:     cdef bint should_record(_TrajectoryDataFilter self,</pre>
-<pre class='cython code score-2 '>static int __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_record(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_range_vector, double __pyx_v_velocity, double __pyx_v_mach, double __pyx_v_step, double __pyx_v_time) {
+<pre class='cython code score-2 '>static int __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_record(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_range_vector, double __pyx_v_velocity, double __pyx_v_mach, double __pyx_v_step, double __pyx_v_time) {
   int __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L1_error:;
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._TrajectoryDataFilter.should_record", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._TrajectoryDataFilter.should_record", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   return __pyx_r;
@@ -690,11 +690,11 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 <pre class="cython line score-0">&#xA0;<span class="">085</span>:                             double time,</pre>
 <pre class="cython line score-0">&#xA0;<span class="">086</span>:                             ):</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">087</span>:         self.check_zero_crossing(range_vector)</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_zero_crossing(__pyx_v_self, __pyx_v_range_vector);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 87, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_zero_crossing(__pyx_v_self, __pyx_v_range_vector);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 87, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">088</span>:         self.check_mach_crossing(velocity, mach)</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_mach_crossing(__pyx_v_self, __pyx_v_velocity, __pyx_v_mach);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 88, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_mach_crossing(__pyx_v_self, __pyx_v_velocity, __pyx_v_mach);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 88, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">089</span>:         if self.check_next_range(range_vector.x, step):</pre>
-<pre class='cython code score-0 '>  __pyx_t_1 = __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_range(__pyx_v_self, __pyx_v_range_vector.x, __pyx_v_step);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 89, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_t_1 = __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_range(__pyx_v_self, __pyx_v_range_vector.x, __pyx_v_step);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 89, __pyx_L1_error)</span>
   if (__pyx_t_1) {
 /* … */
     goto __pyx_L3;
@@ -708,13 +708,13 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
   }
   __pyx_L3:;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">092</span>:             self.check_next_time(time)</pre>
-<pre class='cython code score-0 '>    __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_time(__pyx_v_self, __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 92, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_time(__pyx_v_self, __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 92, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">093</span>:         return (self.current_flag &amp; self.filter) != 0</pre>
 <pre class='cython code score-0 '>  __pyx_r = ((__pyx_v_self-&gt;current_flag &amp; __pyx_v_self-&gt;filter) != 0);
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">094</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">095</span>:     cdef bint should_break(_TrajectoryDataFilter self):</pre>
-<pre class='cython code score-0 '>static int __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_break(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self) {
+<pre class='cython code score-0 '>static int __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_break(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self) {
   int __pyx_r;
 /* … */
   /* function exit code */
@@ -726,7 +726,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">097</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">098</span>:     cdef bint check_next_range(_TrajectoryDataFilter self, double next_range, double step):</pre>
-<pre class='cython code score-0 '>static int __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_range(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_next_range, double __pyx_v_step) {
+<pre class='cython code score-0 '>static int __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_range(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_next_range, double __pyx_v_step) {
   int __pyx_r;
 /* … */
   /* function exit code */
@@ -740,7 +740,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 /* … */
   }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">101</span>:             self.current_flag |= CTrajFlag.RANGE</pre>
-<pre class='cython code score-0 '>    __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_14EulerBallistic_15trajectory_data_RANGE);
+<pre class='cython code score-0 '>    __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_16CyEulerBallistic_15trajectory_data_RANGE);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">102</span>:             self.next_range_distance += step</pre>
 <pre class='cython code score-0 '>    __pyx_v_self-&gt;next_range_distance = (__pyx_v_self-&gt;next_range_distance + __pyx_v_step);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">103</span>:             self.current_item += 1</pre>
@@ -753,7 +753,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">106</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">107</span>:     cdef void check_next_time(self, double time):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_time(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_time) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_next_time(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_time) {
 /* … */
   /* function exit code */
 }
@@ -763,12 +763,12 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 /* … */
   }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">109</span>:             self.current_flag |= CTrajFlag.RANGE</pre>
-<pre class='cython code score-0 '>    __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_14EulerBallistic_15trajectory_data_RANGE);
+<pre class='cython code score-0 '>    __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_16CyEulerBallistic_15trajectory_data_RANGE);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">110</span>:             self.previous_time = time</pre>
 <pre class='cython code score-0 '>    __pyx_v_self-&gt;previous_time = __pyx_v_time;
 </pre><pre class="cython line score-0">&#xA0;<span class="">111</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">112</span>:     cdef void check_mach_crossing(_TrajectoryDataFilter self, double velocity, double mach):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_mach_crossing(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_velocity, double __pyx_v_mach) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_mach_crossing(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, double __pyx_v_velocity, double __pyx_v_mach) {
   double __pyx_v_current_mach;
 /* … */
   /* function exit code */
@@ -785,12 +785,12 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 /* … */
   }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">116</span>:             self.current_flag |= CTrajFlag.MACH</pre>
-<pre class='cython code score-0 '>    __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_14EulerBallistic_15trajectory_data_MACH);
+<pre class='cython code score-0 '>    __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_16CyEulerBallistic_15trajectory_data_MACH);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">117</span>:         self.previous_mach = current_mach</pre>
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;previous_mach = __pyx_v_current_mach;
 </pre><pre class="cython line score-0">&#xA0;<span class="">118</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">119</span>:     cdef void check_zero_crossing(_TrajectoryDataFilter self, CVector range_vector):</pre>
-<pre class='cython code score-0 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_zero_crossing(struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_range_vector) {
+<pre class='cython code score-0 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_check_zero_crossing(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_self, struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_range_vector) {
   double __pyx_v_reference_height;
 /* … */
   /* function exit code */
@@ -807,7 +807,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 <pre class='cython code score-0 '>    __pyx_v_reference_height = (__pyx_v_range_vector.x * tan(__pyx_v_self-&gt;look_angle));
 </pre><pre class="cython line score-0">&#xA0;<span class="">125</span>:             # If we haven't seen ZERO_UP, we look for that first</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">126</span>:             if not (self.seen_zero &amp; CTrajFlag.ZERO_UP):</pre>
-<pre class='cython code score-0 '>    __pyx_t_1 = (!((__pyx_v_self-&gt;seen_zero &amp; __pyx_e_14EulerBallistic_15trajectory_data_ZERO_UP) != 0));
+<pre class='cython code score-0 '>    __pyx_t_1 = (!((__pyx_v_self-&gt;seen_zero &amp; __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_UP) != 0));
     if (__pyx_t_1) {
 /* … */
       goto __pyx_L4;
@@ -818,12 +818,12 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 /* … */
       }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">128</span>:                     self.current_flag |= CTrajFlag.ZERO_UP</pre>
-<pre class='cython code score-0 '>        __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_14EulerBallistic_15trajectory_data_ZERO_UP);
+<pre class='cython code score-0 '>        __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_UP);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">129</span>:                     self.seen_zero |= CTrajFlag.ZERO_UP</pre>
-<pre class='cython code score-0 '>        __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_14EulerBallistic_15trajectory_data_ZERO_UP);
+<pre class='cython code score-0 '>        __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_UP);
 </pre><pre class="cython line score-0">&#xA0;<span class="">130</span>:             # We've crossed above sight line; now look for crossing back through it</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">131</span>:             elif not (self.seen_zero &amp; CTrajFlag.ZERO_DOWN):</pre>
-<pre class='cython code score-0 '>    __pyx_t_1 = (!((__pyx_v_self-&gt;seen_zero &amp; __pyx_e_14EulerBallistic_15trajectory_data_ZERO_DOWN) != 0));
+<pre class='cython code score-0 '>    __pyx_t_1 = (!((__pyx_v_self-&gt;seen_zero &amp; __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_DOWN) != 0));
     if (__pyx_t_1) {
 /* … */
     }
@@ -834,31 +834,31 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter__
 /* … */
       }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">133</span>:                     self.current_flag |= CTrajFlag.ZERO_DOWN</pre>
-<pre class='cython code score-0 '>        __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_14EulerBallistic_15trajectory_data_ZERO_DOWN);
+<pre class='cython code score-0 '>        __pyx_v_self-&gt;current_flag = (__pyx_v_self-&gt;current_flag | __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_DOWN);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">134</span>:                     self.seen_zero |= CTrajFlag.ZERO_DOWN</pre>
-<pre class='cython code score-0 '>        __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_14EulerBallistic_15trajectory_data_ZERO_DOWN);
+<pre class='cython code score-0 '>        __pyx_v_self-&gt;seen_zero = (__pyx_v_self-&gt;seen_zero | __pyx_e_16CyEulerBallistic_15trajectory_data_ZERO_DOWN);
 </pre><pre class="cython line score-0">&#xA0;<span class="">135</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">136</span>: @final</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">137</span>: cdef class _WindSock:</pre>
-<pre class='cython code score-0 '>struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock {
+<pre class='cython code score-0 '>struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock {
   PyObject_HEAD
-  struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc__WindSock *__pyx_vtab;
+  struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc__WindSock *__pyx_vtab;
   PyObject *winds;
   int current;
   double next_range;
-  struct __pyx_t_14EulerBallistic_6vector_CVector _last_vector_cache;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector _last_vector_cache;
   int _length;
 };
 /* … */
-struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc__WindSock {
-  struct __pyx_t_14EulerBallistic_6vector_CVector (*current_vector)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *);
-  void (*update_cache)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *);
-  struct __pyx_t_14EulerBallistic_6vector_CVector (*vector_for_range)(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *, double);
+struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc__WindSock {
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector (*current_vector)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *);
+  void (*update_cache)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *);
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector (*vector_for_range)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *, double);
 };
-static struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc__WindSock *__pyx_vtabptr_14EulerBallistic_15trajectory_calc__WindSock;
-static struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_current_vector(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *);
-static void __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_update_cache(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *);
-static struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_vector_for_range(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *, double);
+static struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc__WindSock *__pyx_vtabptr_16CyEulerBallistic_15trajectory_calc__WindSock;
+static struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_current_vector(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *);
+static void __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_update_cache(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *);
+static struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_vector_for_range(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *, double);
 
 </pre><pre class="cython line score-0">&#xA0;<span class="">138</span>:     cdef:</pre>
 <pre class="cython line score-0">&#xA0;<span class="">139</span>:         list[Wind_t] winds</pre>
@@ -869,8 +869,8 @@ static struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_f_14EulerBallistic_
 <pre class="cython line score-0">&#xA0;<span class="">144</span>: </pre>
 <pre class="cython line score-43" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">145</span>:     def __cinit__(_WindSock self, object winds):</pre>
 <pre class='cython code score-43 '>/* Python wrapper */
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_9_WindSock_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_9_WindSock_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_9_WindSock_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_9_WindSock_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_winds = 0;
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
@@ -927,11 +927,11 @@ static int __pyx_pw_14EulerBallistic_15trajectory_calc_9_WindSock_1__cinit__(PyO
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_VARARGS</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._WindSock.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._WindSock.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(((struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *)__pyx_v_self), __pyx_v_winds);
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_9_WindSock___cinit__(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *)__pyx_v_self), __pyx_v_winds);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -947,7 +947,7 @@ static int __pyx_pw_14EulerBallistic_15trajectory_calc_9_WindSock_1__cinit__(PyO
   return __pyx_r;
 }
 
-static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *__pyx_v_self, PyObject *__pyx_v_winds) {
+static int __pyx_pf_16CyEulerBallistic_15trajectory_calc_9_WindSock___cinit__(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *__pyx_v_self, PyObject *__pyx_v_winds) {
   PyObject *__pyx_7genexpr__pyx_v_w = NULL;
   int __pyx_r;
 /* … */
@@ -962,7 +962,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(stru
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_7);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_8);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_9);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._WindSock.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._WindSock.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_7genexpr__pyx_v_w);
@@ -1205,11 +1205,11 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(stru
 </pre><pre class="cython line score-0">&#xA0;<span class="">158</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">159</span>:         # Initialize cache correctly</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">160</span>:         self.update_cache()</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_update_cache(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 160, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_update_cache(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 160, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">161</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">162</span>:     cdef CVector current_vector(_WindSock self):</pre>
-<pre class='cython code score-0 '>static struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_current_vector(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *__pyx_v_self) {
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_r;
+<pre class='cython code score-0 '>static struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_current_vector(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *__pyx_v_self) {
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L0:;
@@ -1220,14 +1220,14 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(stru
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">164</span>: </pre>
 <pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">165</span>:     cdef void update_cache(_WindSock self):</pre>
-<pre class='cython code score-3 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_update_cache(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *__pyx_v_self) {
-  struct __pyx_t_14EulerBallistic_8cy_euler_Wind_t __pyx_v_cur_wind;
+<pre class='cython code score-3 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_update_cache(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *__pyx_v_self) {
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_Wind_t __pyx_v_cur_wind;
 /* … */
   /* function exit code */
   goto __pyx_L0;
   __pyx_L1_error:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._WindSock.update_cache", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._WindSock.update_cache", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
 }
@@ -1245,11 +1245,11 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(stru
     }
     __pyx_t_2 = <span class='pyx_c_api'>__Pyx_GetItemInt_List</span>(__pyx_v_self-&gt;winds, __pyx_v_self-&gt;current, int, 1, __Pyx_PyInt_From_int, 1, 1, 1);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 168, __pyx_L1_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
-    __pyx_t_3 = __pyx_convert__from_py_struct____pyx_t_14EulerBallistic_8cy_euler_Wind_t(__pyx_t_2);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 168, __pyx_L1_error)</span>
+    __pyx_t_3 = __pyx_convert__from_py_struct____pyx_t_16CyEulerBallistic_8cy_euler_Wind_t(__pyx_t_2);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 168, __pyx_L1_error)</span>
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_cur_wind = __pyx_t_3;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">169</span>:             self._last_vector_cache = wind_to_c_vector(&amp;cur_wind)</pre>
-<pre class='cython code score-0 '>    __pyx_t_4 = __pyx_f_14EulerBallistic_8cy_euler_wind_to_c_vector((&amp;__pyx_v_cur_wind));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 169, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_4 = __pyx_f_16CyEulerBallistic_8cy_euler_wind_to_c_vector((&amp;__pyx_v_cur_wind));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 169, __pyx_L1_error)</span>
     __pyx_v_self-&gt;_last_vector_cache = __pyx_t_4;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">170</span>:             self.next_range = cur_wind.until_distance</pre>
 <pre class='cython code score-0 '>    __pyx_t_5 = __pyx_v_cur_wind.until_distance;
@@ -1271,13 +1271,13 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(stru
   __pyx_L3:;
 </pre><pre class="cython line score-0">&#xA0;<span class="">174</span>: </pre>
 <pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">175</span>:     cdef CVector vector_for_range(_WindSock self, double next_range):</pre>
-<pre class='cython code score-3 '>static struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_vector_for_range(struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *__pyx_v_self, double __pyx_v_next_range) {
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_r;
+<pre class='cython code score-3 '>static struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_vector_for_range(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *__pyx_v_self, double __pyx_v_next_range) {
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_r;
 /* … */
   /* function exit code */
   __pyx_L1_error:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._WindSock.vector_for_range", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._WindSock.vector_for_range", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_pretend_to_initialize(&amp;__pyx_r);
   __pyx_L0:;
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
@@ -1311,7 +1311,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(stru
 </pre><pre class="cython line score-0">&#xA0;<span class="">182</span>:             else:</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">183</span>:                 self.update_cache()  # This will trigger cache updates.</pre>
 <pre class='cython code score-0 '>    /*else*/ {
-      __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_update_cache(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 183, __pyx_L1_error)</span>
+      __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_update_cache(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 183, __pyx_L1_error)</span>
     }
     __pyx_L4:;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">184</span>:         return self._last_vector_cache</pre>
@@ -1320,45 +1320,45 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_9_WindSock___cinit__(stru
 </pre><pre class="cython line score-0">&#xA0;<span class="">185</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">186</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">187</span>: cdef class EulerTrajectoryCalc:</pre>
-<pre class='cython code score-0 '>struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc {
+<pre class='cython code score-0 '>struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc {
   PyObject_HEAD
-  struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_vtab;
+  struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_vtab;
   PyObject *_table_data;
-  struct __pyx_t_14EulerBallistic_6vector_CVector gravity_vector;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector gravity_vector;
   PyObject *_config;
-  struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *ws;
-  struct __pyx_t_14EulerBallistic_8cy_euler_Config_t _EulerTrajectoryCalc__config;
-  struct __pyx_t_14EulerBallistic_8cy_euler_ShotData_t _EulerTrajectoryCalc__shot;
+  struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *ws;
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_Config_t _EulerTrajectoryCalc__config;
+  struct __pyx_t_16CyEulerBallistic_8cy_euler_ShotData_t _EulerTrajectoryCalc__shot;
 };
 /* … */
-struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc {
-  double (*get_calc_step)(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step *__pyx_optional_args);
-  void (*_free_trajectory)(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *);
-  void (*_init_trajectory)(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, PyObject *);
-  PyObject *(*_zero_angle)(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, PyObject *, PyObject *);
-  PyObject *(*_integrate)(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, double, double, int, struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate *__pyx_optional_args);
+struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc {
+  double (*get_calc_step)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, struct __pyx_opt_args_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step *__pyx_optional_args);
+  void (*_free_trajectory)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *);
+  void (*_init_trajectory)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, PyObject *);
+  PyObject *(*_zero_angle)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, PyObject *, PyObject *);
+  PyObject *(*_integrate)(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *, double, double, int, struct __pyx_opt_args_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate *__pyx_optional_args);
 };
-static struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_vtabptr_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc;
+static struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_vtabptr_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc;
 </pre><pre class="cython line score-0">&#xA0;<span class="">188</span>:     cdef:</pre>
 <pre class="cython line score-0">&#xA0;<span class="">189</span>:         list[object] _table_data</pre>
 <pre class="cython line score-0">&#xA0;<span class="">190</span>:         CVector gravity_vector</pre>
 <pre class="cython line score-12" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">191</span>:         public object _config</pre>
 <pre class='cython code score-12 '>/* Python wrapper */
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
   __pyx_kwvalues = <span class='pyx_c_api'>__Pyx_KwValues_VARARGS</span>(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config___get__(((struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config___get__(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self));
 
   /* function exit code */
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config___get__(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
+static PyObject *__pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config___get__(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_self-&gt;_config);
@@ -1373,21 +1373,21 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 }
 
 /* Python wrapper */
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__set__ (wrapper)", 0);
   __pyx_kwvalues = <span class='pyx_c_api'>__Pyx_KwValues_VARARGS</span>(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_2__set__(((struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), ((PyObject *)__pyx_v_value));
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_2__set__(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), ((PyObject *)__pyx_v_value));
 
   /* function exit code */
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 
-static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_2__set__(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_value) {
+static int __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_2__set__(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_value) {
   int __pyx_r;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_value);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_v_value);
@@ -1402,21 +1402,21 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_c
 }
 
 /* Python wrapper */
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_5__del__(PyObject *__pyx_v_self); /*proto*/
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_5__del__(PyObject *__pyx_v_self) {
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_5__del__(PyObject *__pyx_v_self); /*proto*/
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_5__del__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   int __pyx_r;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__del__ (wrapper)", 0);
   __pyx_kwvalues = <span class='pyx_c_api'>__Pyx_KwValues_VARARGS</span>(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_4__del__(((struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_4__del__(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self));
 
   /* function exit code */
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 
-static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_4__del__(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
+static int __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_config_4__del__(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
   int __pyx_r;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(Py_None);
   <span class='refnanny'>__Pyx_GIVEREF</span>(Py_None);
@@ -1435,8 +1435,8 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_7_c
 <pre class="cython line score-0">&#xA0;<span class="">195</span>: </pre>
 <pre class="cython line score-36" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">196</span>:     def __cinit__(EulerTrajectoryCalc self, object _config):</pre>
 <pre class='cython code score-36 '>/* Python wrapper */
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v__config = 0;
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
@@ -1493,11 +1493,11 @@ static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_1__
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_VARARGS</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc___cinit__(((struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), __pyx_v__config);
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc___cinit__(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), __pyx_v__config);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -1513,7 +1513,7 @@ static int __pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_1__
   return __pyx_r;
 }
 
-static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc___cinit__(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v__config) {
+static int __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc___cinit__(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v__config) {
   int __pyx_r;
 /* … */
   /* function exit code */
@@ -1521,7 +1521,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc___c
   goto __pyx_L0;
   __pyx_L1_error:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
@@ -1547,7 +1547,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc___c
 <pre class="cython line score-0">&#xA0;<span class="">201</span>:     #     free_trajectory(&amp;self.__shot)</pre>
 <pre class="cython line score-0">&#xA0;<span class="">202</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">203</span>:     cdef double get_calc_step(self, double step = 0):</pre>
-<pre class='cython code score-0 '>static double __pyx_f_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step *__pyx_optional_args) {
+<pre class='cython code score-0 '>static double __pyx_f_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, struct __pyx_opt_args_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step *__pyx_optional_args) {
   double __pyx_v_step = ((double)0.0);
   double __pyx_v_preferred_step;
   double __pyx_r;
@@ -1562,7 +1562,7 @@ static int __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc___c
   return __pyx_r;
 }
 /* … */
-struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step {
+struct __pyx_opt_args_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_get_calc_step {
   int __pyx_n;
   double step;
 };
@@ -1592,21 +1592,21 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_g
 </pre><pre class="cython line score-0">&#xA0;<span class="">209</span>: </pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">210</span>:     @property</pre>
 <pre class='cython code score-2 '>/* Python wrapper */
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data_1__get__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data_1__get__(PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data_1__get__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__get__ (wrapper)", 0);
   __pyx_kwvalues = <span class='pyx_c_api'>__Pyx_KwValues_VARARGS</span>(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data___get__(((struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self));
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data___get__(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self));
 
   /* function exit code */
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data___get__(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
+static PyObject *__pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_10table_data___get__(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
 /* … */
   /* function exit code */
@@ -1624,15 +1624,15 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 </pre><pre class="cython line score-0">&#xA0;<span class="">213</span>: </pre>
 <pre class="cython line score-52" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">214</span>:     def zero_angle(self, object shot_info, object distance) -&gt; Angular:</pre>
 <pre class='cython code score-52 '>/* Python wrapper */
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_3zero_angle(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_3zero_angle(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-<span class='py_macro_api'>PyDoc_STRVAR</span>(__pyx_doc_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_2zero_angle, "EulerTrajectoryCalc.zero_angle(self, shot_info, distance) -&gt; Angular");
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_3zero_angle(PyObject *__pyx_v_self, 
+<span class='py_macro_api'>PyDoc_STRVAR</span>(__pyx_doc_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_2zero_angle, "EulerTrajectoryCalc.zero_angle(self, shot_info, distance) -&gt; Angular");
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_3zero_angle(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -1714,11 +1714,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc.zero_angle", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc.zero_angle", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_2zero_angle(((struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), __pyx_v_shot_info, __pyx_v_distance);
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_2zero_angle(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), __pyx_v_shot_info, __pyx_v_distance);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -1734,13 +1734,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_2zero_angle(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info, PyObject *__pyx_v_distance) {
+static PyObject *__pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_2zero_angle(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info, PyObject *__pyx_v_distance) {
   PyObject *__pyx_r = NULL;
 /* … */
   /* function exit code */
   __pyx_L1_error:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_1);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc.zero_angle", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc.zero_angle", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
@@ -1749,7 +1749,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 }
 </pre><pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">215</span>:         return self._zero_angle(shot_info, distance)</pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_zero_angle(__pyx_v_self, __pyx_v_shot_info, __pyx_v_distance);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 215, __pyx_L1_error)</span>
+  __pyx_t_1 = ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_zero_angle(__pyx_v_self, __pyx_v_shot_info, __pyx_v_distance);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 215, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1757,15 +1757,15 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 </pre><pre class="cython line score-0">&#xA0;<span class="">216</span>: </pre>
 <pre class="cython line score-100" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">217</span>:     def trajectory(self, object shot_info, object max_range, object dist_step,</pre>
 <pre class='cython code score-100 '>/* Python wrapper */
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_5trajectory(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_5trajectory(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-<span class='py_macro_api'>PyDoc_STRVAR</span>(__pyx_doc_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_4trajectory, "EulerTrajectoryCalc.trajectory(self, shot_info, max_range, dist_step, bool extra_data=False, double time_step=0.0) -&gt; object");
-static PyObject *__pyx_pw_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_5trajectory(PyObject *__pyx_v_self, 
+<span class='py_macro_api'>PyDoc_STRVAR</span>(__pyx_doc_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_4trajectory, "EulerTrajectoryCalc.trajectory(self, shot_info, max_range, dist_step, bool extra_data=False, double time_step=0.0) -&gt; object");
+static PyObject *__pyx_pw_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_5trajectory(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -1890,8 +1890,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_4trajectory(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info, PyObject *__pyx_v_max_range, PyObject *__pyx_v_dist_step, int __pyx_v_extra_data, double __pyx_v_time_step) {
-  enum __pyx_t_14EulerBallistic_15trajectory_data_CTrajFlag __pyx_v_filter_flags;
+static PyObject *__pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_4trajectory(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info, PyObject *__pyx_v_max_range, PyObject *__pyx_v_dist_step, int __pyx_v_extra_data, double __pyx_v_time_step) {
+  enum __pyx_t_16CyEulerBallistic_15trajectory_data_CTrajFlag __pyx_v_filter_flags;
   PyObject *__pyx_v_t = 0;
   PyObject *__pyx_r = NULL;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_dist_step);
@@ -1902,7 +1902,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_6);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc.trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc.trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_t);
@@ -1932,16 +1932,16 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc.trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc.trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_4trajectory(((struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), __pyx_v_shot_info, __pyx_v_max_range, __pyx_v_dist_step, __pyx_v_extra_data, __pyx_v_time_step);
+  __pyx_r = __pyx_pf_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc_4trajectory(((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self), __pyx_v_shot_info, __pyx_v_max_range, __pyx_v_dist_step, __pyx_v_extra_data, __pyx_v_time_step);
 </pre><pre class="cython line score-0">&#xA0;<span class="">219</span>:         # hack to reload config if it was changed explicit on existed instance</pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">220</span>:         self.__config = config_bind(self._config)</pre>
 <pre class='cython code score-2 '>  __pyx_t_1 = __pyx_v_self-&gt;_config;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
-  __pyx_t_2 = __pyx_f_14EulerBallistic_8cy_euler_config_bind(__pyx_t_1);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 220, __pyx_L1_error)</span>
+  __pyx_t_2 = __pyx_f_16CyEulerBallistic_8cy_euler_config_bind(__pyx_t_1);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 220, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self-&gt;_EulerTrajectoryCalc__config = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">221</span>:         self.gravity_vector = CVector(.0, self.__config.cGravityConstant, .0)</pre>
@@ -1952,7 +1952,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 </pre><pre class="cython line score-0">&#xA0;<span class="">222</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">223</span>:         cdef:</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">224</span>:             CTrajFlag filter_flags = CTrajFlag.RANGE</pre>
-<pre class='cython code score-0 '>  __pyx_v_filter_flags = __pyx_e_14EulerBallistic_15trajectory_data_RANGE;
+<pre class='cython code score-0 '>  __pyx_v_filter_flags = __pyx_e_16CyEulerBallistic_15trajectory_data_RANGE;
 </pre><pre class="cython line score-0">&#xA0;<span class="">225</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">226</span>:         if extra_data:</pre>
 <pre class='cython code score-0 '>  if (__pyx_v_extra_data) {
@@ -1992,10 +1992,10 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
     <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_v_dist_step, __pyx_t_1);
     __pyx_t_1 = 0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">228</span>:             filter_flags = CTrajFlag.ALL</pre>
-<pre class='cython code score-0 '>    __pyx_v_filter_flags = __pyx_e_14EulerBallistic_15trajectory_data_ALL;
+<pre class='cython code score-0 '>    __pyx_v_filter_flags = __pyx_e_16CyEulerBallistic_15trajectory_data_ALL;
 </pre><pre class="cython line score-0">&#xA0;<span class="">229</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">230</span>:         self._init_trajectory(shot_info)</pre>
-<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_init_trajectory(__pyx_v_self, __pyx_v_shot_info);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 230, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_init_trajectory(__pyx_v_self, __pyx_v_shot_info);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 230, __pyx_L1_error)</span>
 </pre><pre class="cython line score-26" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">231</span>:         cdef list[object] t = self._integrate(max_range._feet, dist_step._feet, filter_flags, time_step)</pre>
 <pre class='cython code score-26 '>  __pyx_t_1 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_v_max_range, __pyx_n_s_feet);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 231, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
@@ -2007,12 +2007,12 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_10.__pyx_n = 1;
   __pyx_t_10.time_step = __pyx_v_time_step;
-  __pyx_t_1 = ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_integrate(__pyx_v_self, __pyx_t_8, __pyx_t_9, __pyx_v_filter_flags, &amp;__pyx_t_10);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 231, __pyx_L1_error)</span>
+  __pyx_t_1 = ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_integrate(__pyx_v_self, __pyx_t_8, __pyx_t_9, __pyx_v_filter_flags, &amp;__pyx_t_10);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 231, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_v_t = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">232</span>:         self._free_trajectory()</pre>
-<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_free_trajectory(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 232, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_free_trajectory(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 232, __pyx_L1_error)</span>
 </pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">233</span>:         return t</pre>
 <pre class='cython code score-2 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_t);
@@ -2020,19 +2020,19 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">234</span>: </pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">235</span>:     cdef void _free_trajectory(self):</pre>
-<pre class='cython code score-2 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__free_trajectory(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
+<pre class='cython code score-2 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__free_trajectory(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self) {
 /* … */
   /* function exit code */
   goto __pyx_L0;
   __pyx_L1_error:;
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc._free_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc._free_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
 }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">236</span>:         free_trajectory(&amp;self.__shot)</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_8cy_euler_free_trajectory((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_8cy_euler_free_trajectory((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 236, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">237</span>: </pre>
 <pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">238</span>:     cdef void _init_trajectory(self, object shot_info):</pre>
-<pre class='cython code score-6 '>static void __pyx_f_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__init_trajectory(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info) {
+<pre class='cython code score-6 '>static void __pyx_f_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__init_trajectory(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info) {
 /* … */
   /* function exit code */
   goto __pyx_L0;
@@ -2041,7 +2041,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_8);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_9);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc._init_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc._init_trajectory", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_L0:;
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
 }
@@ -2077,13 +2077,13 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 </pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">242</span>:             curve=cy_calculate_curve(self._table_data),</pre>
 <pre class='cython code score-2 '>  __pyx_t_1 = __pyx_v_self-&gt;_table_data;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
-  __pyx_t_5 = __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_curve(((PyObject*)__pyx_t_1));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 242, __pyx_L1_error)</span>
+  __pyx_t_5 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_curve(((PyObject*)__pyx_t_1));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 242, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3.curve = __pyx_t_5;
 </pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">243</span>:             mach_list=cy_table_to_mach(self._table_data),</pre>
 <pre class='cython code score-2 '>  __pyx_t_1 = __pyx_v_self-&gt;_table_data;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
-  __pyx_t_6 = __pyx_f_14EulerBallistic_8cy_euler_cy_table_to_mach(((PyObject*)__pyx_t_1));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L1_error)</span>
+  __pyx_t_6 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_table_to_mach(((PyObject*)__pyx_t_1));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 243, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3.mach_list = __pyx_t_6;
 </pre><pre class="cython line score-16" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">244</span>:             look_angle=shot_info.look_angle._rad,</pre>
@@ -2213,7 +2213,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3.alt0 = __pyx_t_4;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">255</span>:             calc_step=self.get_calc_step(),</pre>
-<pre class='cython code score-0 '>  __pyx_t_4 = ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;get_calc_step(__pyx_v_self, NULL);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 255, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_t_4 = ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;get_calc_step(__pyx_v_self, NULL);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 255, __pyx_L1_error)</span>
   __pyx_t_3.calc_step = __pyx_t_4;
 </pre><pre class="cython line score-0">&#xA0;<span class="">256</span>:             # calc_step=cy_get_calc_step(self.__config),</pre>
 <pre class="cython line score-22" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">257</span>:             diameter=shot_info.ammo.dm.diameter._inch,</pre>
@@ -2354,23 +2354,23 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
   __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.muzzle_velocity = __pyx_t_4;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">268</span>:         cy_update_stability_coefficient(&amp;self.__shot)</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_8cy_euler_cy_update_stability_coefficient((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 268, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_8cy_euler_cy_update_stability_coefficient((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 268, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">269</span>: </pre>
 <pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">270</span>:         self.ws = _WindSock(shot_info.winds)</pre>
 <pre class='cython code score-6 '>  __pyx_t_9 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_v_shot_info, __pyx_n_s_winds);<span class='error_goto'> if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 270, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_9);
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(((PyObject *)__pyx_ptype_14EulerBallistic_15trajectory_calc__WindSock), __pyx_t_9);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 270, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(((PyObject *)__pyx_ptype_16CyEulerBallistic_15trajectory_calc__WindSock), __pyx_t_9);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 270, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_2);
   <span class='refnanny'>__Pyx_GOTREF</span>((PyObject *)__pyx_v_self-&gt;ws);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>((PyObject *)__pyx_v_self-&gt;ws);
-  __pyx_v_self-&gt;ws = ((struct __pyx_obj_14EulerBallistic_15trajectory_calc__WindSock *)__pyx_t_2);
+  __pyx_v_self-&gt;ws = ((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__WindSock *)__pyx_t_2);
   __pyx_t_2 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">271</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">272</span>: </pre>
 <pre class="cython line score-11" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">273</span>:     cdef object _zero_angle(EulerTrajectoryCalc self, object shot_info, object distance):</pre>
-<pre class='cython code score-11 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__zero_angle(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info, PyObject *__pyx_v_distance) {
+<pre class='cython code score-11 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__zero_angle(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, PyObject *__pyx_v_shot_info, PyObject *__pyx_v_distance) {
   double __pyx_v__cZeroFindingAccuracy;
   double __pyx_v__cMaxIterations;
   double __pyx_v_zero_distance;
@@ -2392,7 +2392,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_12);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_13);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_14);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc._zero_angle", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc._zero_angle", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_t);
@@ -2404,7 +2404,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">275</span>:         self.__config = config_bind(self._config)</pre>
 <pre class='cython code score-2 '>  __pyx_t_1 = __pyx_v_self-&gt;_config;
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
-  __pyx_t_2 = __pyx_f_14EulerBallistic_8cy_euler_config_bind(__pyx_t_1);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 275, __pyx_L1_error)</span>
+  __pyx_t_2 = __pyx_f_16CyEulerBallistic_8cy_euler_config_bind(__pyx_t_1);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 275, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self-&gt;_EulerTrajectoryCalc__config = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">276</span>:         self.gravity_vector = CVector(.0, self.__config.cGravityConstant, .0)</pre>
@@ -2472,7 +2472,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 <pre class="cython line score-0">&#xA0;<span class="">291</span>:             double height</pre>
 <pre class="cython line score-0">&#xA0;<span class="">292</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">293</span>:         self._init_trajectory(shot_info)</pre>
-<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_init_trajectory(__pyx_v_self, __pyx_v_shot_info);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 293, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_init_trajectory(__pyx_v_self, __pyx_v_shot_info);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 293, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">294</span>:         self.__shot.barrel_azimuth = 0.0</pre>
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.barrel_azimuth = 0.0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">295</span>:         self.__shot.barrel_elevation = atan(height_at_zero / zero_distance)</pre>
@@ -2496,7 +2496,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
     __pyx_L5_bool_binop_done:;
     if (!__pyx_t_8) break;
 </pre><pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">301</span>:             t = self._integrate(maximum_range, zero_distance, CTrajFlag.NONE)[0]</pre>
-<pre class='cython code score-9 '>    __pyx_t_6 = ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_integrate(__pyx_v_self, __pyx_v_maximum_range, __pyx_v_zero_distance, __pyx_e_14EulerBallistic_15trajectory_data_NONE, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 301, __pyx_L1_error)</span>
+<pre class='cython code score-9 '>    __pyx_t_6 = ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_integrate(__pyx_v_self, __pyx_v_maximum_range, __pyx_v_zero_distance, __pyx_e_16CyEulerBallistic_15trajectory_data_NONE, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 301, __pyx_L1_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_6);
     if (unlikely(__pyx_t_6 == Py_None)) {
       <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "'NoneType' object is not subscriptable");
@@ -2537,7 +2537,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   }
   __pyx_L4_break:;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">309</span>:         self._free_trajectory()</pre>
-<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_free_trajectory(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 309, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *)__pyx_v_self-&gt;__pyx_vtab)-&gt;_free_trajectory(__pyx_v_self);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 309, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">310</span>:         if zero_finding_error &gt; _cZeroFindingAccuracy:</pre>
 <pre class='cython code score-0 '>  __pyx_t_8 = (__pyx_v_zero_finding_error &gt; __pyx_v__cZeroFindingAccuracy);
   if (unlikely(__pyx_t_8)) {
@@ -2646,7 +2646,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
 </pre><pre class="cython line score-0">&#xA0;<span class="">313</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">314</span>: </pre>
 <pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">315</span>:     cdef list[object] _integrate(EulerTrajectoryCalc self,</pre>
-<pre class='cython code score-9 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate(struct __pyx_obj_14EulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, double __pyx_v_maximum_range, double __pyx_v_step, int __pyx_v_filter_flags, struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate *__pyx_optional_args) {
+<pre class='cython code score-9 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate(struct __pyx_obj_16CyEulerBallistic_15trajectory_calc_EulerTrajectoryCalc *__pyx_v_self, double __pyx_v_maximum_range, double __pyx_v_step, int __pyx_v_filter_flags, struct __pyx_opt_args_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate *__pyx_optional_args) {
   double __pyx_v_time_step = ((double)0.0);
   double __pyx_v_velocity;
   double __pyx_v_delta_time;
@@ -2655,21 +2655,21 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   PyObject *__pyx_v_ranges = 0;
   double __pyx_v_time;
   double __pyx_v_drag;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_range_vector;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_velocity_vector;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_delta_range_vector;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_velocity_adjusted;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_gravity_vector;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_range_vector;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_velocity_vector;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_delta_range_vector;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_velocity_adjusted;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_gravity_vector;
   double __pyx_v_calc_step;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_wind_vector;
-  struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_data_filter = 0;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_wind_vector;
+  struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *__pyx_v_data_filter = 0;
   double __pyx_v__cMinimumVelocity;
   double __pyx_v__cMaximumDrop;
   double __pyx_v__cMinimumAltitude;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v__dir_vector;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v__temp1;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v__temp2;
-  struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v__temp3;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v__dir_vector;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v__temp1;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v__temp2;
+  struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v__temp3;
   int __pyx_v_it;
   PyObject *__pyx_v_reason = NULL;
   PyObject *__pyx_r = NULL;
@@ -2685,7 +2685,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_12);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.EulerTrajectoryCalc._integrate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.EulerTrajectoryCalc._integrate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_ranges);
@@ -2696,7 +2696,7 @@ static PyObject *__pyx_pf_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCa
   return __pyx_r;
 }
 /* … */
-struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate {
+struct __pyx_opt_args_16CyEulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__integrate {
   int __pyx_n;
   double time_step;
 };
@@ -2729,7 +2729,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 </pre><pre class="cython line score-0">&#xA0;<span class="">328</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">329</span>:             # region Initialize wind-related variables to first wind reading (if any)</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">330</span>:             CVector wind_vector = self.ws.current_vector()</pre>
-<pre class='cython code score-0 '>  __pyx_t_2 = __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_current_vector(__pyx_v_self-&gt;ws);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 330, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_t_2 = __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_current_vector(__pyx_v_self-&gt;ws);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 330, __pyx_L1_error)</span>
   __pyx_v_wind_vector = __pyx_t_2;
 </pre><pre class="cython line score-0">&#xA0;<span class="">331</span>:             # endregion</pre>
 <pre class="cython line score-0">&#xA0;<span class="">332</span>: </pre>
@@ -2769,7 +2769,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 <pre class='cython code score-0 '>  __pyx_t_2.z = (cos(__pyx_v_self-&gt;_EulerTrajectoryCalc__shot.barrel_elevation) * sin(__pyx_v_self-&gt;_EulerTrajectoryCalc__shot.barrel_azimuth));
   __pyx_v__dir_vector = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">352</span>:         velocity_vector = mul_c(&amp;_dir_vector, velocity)</pre>
-<pre class='cython code score-0 '>  __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_mul_c((&amp;__pyx_v__dir_vector), __pyx_v_velocity);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 352, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_mul_c((&amp;__pyx_v__dir_vector), __pyx_v_velocity);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 352, __pyx_L1_error)</span>
   __pyx_v_velocity_vector = __pyx_t_2;
 </pre><pre class="cython line score-0">&#xA0;<span class="">353</span>:         # endregion</pre>
 <pre class="cython line score-0">&#xA0;<span class="">354</span>: </pre>
@@ -2782,10 +2782,10 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_s_filter_flags, __pyx_t_4) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 356, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
 /* … */
-  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter), __pyx_empty_tuple, __pyx_t_1);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 356, __pyx_L1_error)</span>
+  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter), __pyx_empty_tuple, __pyx_t_1);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 356, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_data_filter = ((struct __pyx_obj_14EulerBallistic_15trajectory_calc__TrajectoryDataFilter *)__pyx_t_4);
+  __pyx_v_data_filter = ((struct __pyx_obj_16CyEulerBallistic_15trajectory_calc__TrajectoryDataFilter *)__pyx_t_4);
   __pyx_t_4 = 0;
 </pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">357</span>:                                             ranges_length=&lt;int&gt; ((maximum_range / step) + 1),</pre>
 <pre class='cython code score-8 '>  __pyx_t_4 = <span class='pyx_c_api'>__Pyx_PyInt_From_int</span>(((int)((__pyx_v_maximum_range / __pyx_v_step) + 1.0)));<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 357, __pyx_L1_error)</span>
@@ -2798,7 +2798,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_1, __pyx_n_s_time_step, __pyx_t_4) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 356, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">359</span>:         data_filter.setup_seen_zero(range_vector.y, self.__shot.barrel_elevation, self.__shot.look_angle)</pre>
-<pre class='cython code score-0 '>  __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_setup_seen_zero(__pyx_v_data_filter, __pyx_v_range_vector.y, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.barrel_elevation, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.look_angle);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 359, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_setup_seen_zero(__pyx_v_data_filter, __pyx_v_range_vector.y, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.barrel_elevation, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.look_angle);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 359, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">360</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">361</span>:         #region Trajectory Loop</pre>
 <pre class="cython line score-20" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">362</span>:         warnings.simplefilter("once")  # used to avoid multiple warnings in a loop</pre>
@@ -2839,7 +2839,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">365</span>:             it += 1</pre>
 <pre class='cython code score-0 '>    __pyx_v_it = (__pyx_v_it + 1);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">366</span>:             data_filter.current_flag = CTrajFlag.NONE</pre>
-<pre class='cython code score-0 '>    __pyx_v_data_filter-&gt;current_flag = __pyx_e_14EulerBallistic_15trajectory_data_NONE;
+<pre class='cython code score-0 '>    __pyx_v_data_filter-&gt;current_flag = __pyx_e_16CyEulerBallistic_15trajectory_data_NONE;
 </pre><pre class="cython line score-0">&#xA0;<span class="">367</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">368</span>:             # Update wind reading at current point in trajectory</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">369</span>:             if range_vector.x &gt;= self.ws.next_range:  # require check before call to improve performance</pre>
@@ -2848,12 +2848,12 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 /* … */
     }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">370</span>:                 wind_vector = self.ws.vector_for_range(range_vector.x)</pre>
-<pre class='cython code score-0 '>      __pyx_t_2 = __pyx_f_14EulerBallistic_15trajectory_calc_9_WindSock_vector_for_range(__pyx_v_self-&gt;ws, __pyx_v_range_vector.x);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 370, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>      __pyx_t_2 = __pyx_f_16CyEulerBallistic_15trajectory_calc_9_WindSock_vector_for_range(__pyx_v_self-&gt;ws, __pyx_v_range_vector.x);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 370, __pyx_L1_error)</span>
       __pyx_v_wind_vector = __pyx_t_2;
 </pre><pre class="cython line score-0">&#xA0;<span class="">371</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">372</span>:             # overwrite density_factor and mach by pointer</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">373</span>:             update_density_factor_and_mach_for_altitude(&amp;self.__shot.atmo,</pre>
-<pre class='cython code score-0 '>    __pyx_f_14EulerBallistic_8cy_euler_update_density_factor_and_mach_for_altitude((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot.atmo), (__pyx_v_self-&gt;_EulerTrajectoryCalc__shot.alt0 + __pyx_v_range_vector.y), (&amp;__pyx_v_density_factor), (&amp;__pyx_v_mach));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 373, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_f_16CyEulerBallistic_8cy_euler_update_density_factor_and_mach_for_altitude((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot.atmo), (__pyx_v_self-&gt;_EulerTrajectoryCalc__shot.alt0 + __pyx_v_range_vector.y), (&amp;__pyx_v_density_factor), (&amp;__pyx_v_mach));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 373, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">374</span>:                 self.__shot.alt0 + range_vector.y, &amp;density_factor, &amp;mach)</pre>
 <pre class="cython line score-0">&#xA0;<span class="">375</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">376</span>:             if filter_flags:</pre>
@@ -2865,22 +2865,22 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 <pre class="cython line score-0">&#xA0;<span class="">378</span>:                 # Record TrajectoryData row</pre>
 <pre class="cython line score-0">&#xA0;<span class="">379</span>:                 # if data_filter.should_record(range_vector, velocity, mach, step, self.look_angle, time):</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">380</span>:                 if data_filter.should_record(range_vector, velocity, mach, step, time):</pre>
-<pre class='cython code score-0 '>      __pyx_t_7 = __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_record(__pyx_v_data_filter, __pyx_v_range_vector, __pyx_v_velocity, __pyx_v_mach, __pyx_v_step, __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 380, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>      __pyx_t_7 = __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_record(__pyx_v_data_filter, __pyx_v_range_vector, __pyx_v_velocity, __pyx_v_mach, __pyx_v_step, __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 380, __pyx_L1_error)</span>
       if (__pyx_t_7) {
 /* … */
       }
 </pre><pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">381</span>:                     ranges.append(create_trajectory_row(</pre>
-<pre class='cython code score-3 '>        __pyx_t_4 = __pyx_f_14EulerBallistic_15trajectory_calc_create_trajectory_row(__pyx_v_time, __pyx_v_range_vector, __pyx_v_velocity_vector, __pyx_v_velocity, __pyx_v_mach, __pyx_t_3, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.look_angle, __pyx_v_density_factor, __pyx_v_drag, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.weight, __pyx_v_data_filter-&gt;current_flag);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 381, __pyx_L1_error)</span>
+<pre class='cython code score-3 '>        __pyx_t_4 = __pyx_f_16CyEulerBallistic_15trajectory_calc_create_trajectory_row(__pyx_v_time, __pyx_v_range_vector, __pyx_v_velocity_vector, __pyx_v_velocity, __pyx_v_mach, __pyx_t_3, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.look_angle, __pyx_v_density_factor, __pyx_v_drag, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.weight, __pyx_v_data_filter-&gt;current_flag);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 381, __pyx_L1_error)</span>
         <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_4);
         __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_ranges, __pyx_t_4);<span class='error_goto'> if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(1, 381, __pyx_L1_error)</span>
         <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">382</span>:                         time, range_vector, velocity_vector,</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">383</span>:                         velocity, mach, cy_spin_drift(&amp;self.__shot, time), self.__shot.look_angle,</pre>
-<pre class='cython code score-0 '>        __pyx_t_3 = __pyx_f_14EulerBallistic_8cy_euler_cy_spin_drift((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot), __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 383, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>        __pyx_t_3 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_spin_drift((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot), __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 383, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">384</span>:                         density_factor, drag, self.__shot.weight, data_filter.current_flag</pre>
 <pre class="cython line score-0">&#xA0;<span class="">385</span>:                     ))</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">386</span>:                     if data_filter.should_break():</pre>
-<pre class='cython code score-0 '>        __pyx_t_7 = __pyx_f_14EulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_break(__pyx_v_data_filter);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 386, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>        __pyx_t_7 = __pyx_f_16CyEulerBallistic_15trajectory_calc_21_TrajectoryDataFilter_should_break(__pyx_v_data_filter);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 386, __pyx_L1_error)</span>
         if (__pyx_t_7) {
 /* … */
         }
@@ -2891,10 +2891,10 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 <pre class="cython line score-0">&#xA0;<span class="">390</span>:             # use just cdef methods to</pre>
 <pre class="cython line score-0">&#xA0;<span class="">391</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">392</span>:             velocity_adjusted = sub(&amp;velocity_vector, &amp;wind_vector)</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_sub((&amp;__pyx_v_velocity_vector), (&amp;__pyx_v_wind_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 392, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_sub((&amp;__pyx_v_velocity_vector), (&amp;__pyx_v_wind_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 392, __pyx_L1_error)</span>
     __pyx_v_velocity_adjusted = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">393</span>:             velocity = mag(&amp;velocity_adjusted)</pre>
-<pre class='cython code score-0 '>    __pyx_t_3 = __pyx_f_14EulerBallistic_6vector_mag((&amp;__pyx_v_velocity_adjusted));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 393, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_3 = __pyx_f_16CyEulerBallistic_6vector_mag((&amp;__pyx_v_velocity_adjusted));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 393, __pyx_L1_error)</span>
     __pyx_v_velocity = __pyx_t_3;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">394</span>:             delta_time = calc_step / max(1.0, velocity)</pre>
 <pre class='cython code score-0 '>    __pyx_t_3 = __pyx_v_velocity;
@@ -2907,32 +2907,32 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
     }
     __pyx_v_delta_time = (__pyx_v_calc_step / __pyx_t_10);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">395</span>:             drag = density_factor * velocity * cy_drag_by_mach(&amp;self.__shot, velocity / mach)</pre>
-<pre class='cython code score-0 '>    __pyx_t_10 = __pyx_f_14EulerBallistic_8cy_euler_cy_drag_by_mach((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot), (__pyx_v_velocity / __pyx_v_mach));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 395, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_10 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_drag_by_mach((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot), (__pyx_v_velocity / __pyx_v_mach));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 395, __pyx_L1_error)</span>
     __pyx_v_drag = ((__pyx_v_density_factor * __pyx_v_velocity) * __pyx_t_10);
 </pre><pre class="cython line score-0">&#xA0;<span class="">396</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">397</span>:             _temp1 = mul_c(&amp;velocity_adjusted, drag)</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_mul_c((&amp;__pyx_v_velocity_adjusted), __pyx_v_drag);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 397, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_mul_c((&amp;__pyx_v_velocity_adjusted), __pyx_v_drag);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 397, __pyx_L1_error)</span>
     __pyx_v__temp1 = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">398</span>:             _temp2 = sub(&amp;_temp1, &amp;gravity_vector)</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_sub((&amp;__pyx_v__temp1), (&amp;__pyx_v_gravity_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 398, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_sub((&amp;__pyx_v__temp1), (&amp;__pyx_v_gravity_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 398, __pyx_L1_error)</span>
     __pyx_v__temp2 = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">399</span>:             _temp3 = mul_c(&amp;_temp2, delta_time)</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_mul_c((&amp;__pyx_v__temp2), __pyx_v_delta_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 399, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_mul_c((&amp;__pyx_v__temp2), __pyx_v_delta_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 399, __pyx_L1_error)</span>
     __pyx_v__temp3 = __pyx_t_2;
 </pre><pre class="cython line score-0">&#xA0;<span class="">400</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">401</span>:             velocity_vector = sub(&amp;velocity_vector, &amp;_temp3)</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_sub((&amp;__pyx_v_velocity_vector), (&amp;__pyx_v__temp3));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 401, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_sub((&amp;__pyx_v_velocity_vector), (&amp;__pyx_v__temp3));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 401, __pyx_L1_error)</span>
     __pyx_v_velocity_vector = __pyx_t_2;
 </pre><pre class="cython line score-0">&#xA0;<span class="">402</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">403</span>:             delta_range_vector = mul_c(&amp;velocity_vector, delta_time)</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_mul_c((&amp;__pyx_v_velocity_vector), __pyx_v_delta_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 403, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_mul_c((&amp;__pyx_v_velocity_vector), __pyx_v_delta_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 403, __pyx_L1_error)</span>
     __pyx_v_delta_range_vector = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">404</span>:             range_vector = add(&amp;range_vector, &amp;delta_range_vector)</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_14EulerBallistic_6vector_add((&amp;__pyx_v_range_vector), (&amp;__pyx_v_delta_range_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 404, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_f_16CyEulerBallistic_6vector_add((&amp;__pyx_v_range_vector), (&amp;__pyx_v_delta_range_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 404, __pyx_L1_error)</span>
     __pyx_v_range_vector = __pyx_t_2;
 </pre><pre class="cython line score-0">&#xA0;<span class="">405</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">406</span>:             velocity = mag(&amp;velocity_vector)</pre>
-<pre class='cython code score-0 '>    __pyx_t_10 = __pyx_f_14EulerBallistic_6vector_mag((&amp;__pyx_v_velocity_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 406, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_10 = __pyx_f_16CyEulerBallistic_6vector_mag((&amp;__pyx_v_velocity_vector));<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 406, __pyx_L1_error)</span>
     __pyx_v_velocity = __pyx_t_10;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">407</span>:             time += delta_time</pre>
 <pre class='cython code score-0 '>    __pyx_v_time = (__pyx_v_time + __pyx_v_delta_time);
@@ -3040,13 +3040,13 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 /* … */
   }
 </pre><pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">426</span>:             ranges.append(create_trajectory_row(</pre>
-<pre class='cython code score-3 '>    __pyx_t_5 = __pyx_f_14EulerBallistic_15trajectory_calc_create_trajectory_row(__pyx_v_time, __pyx_v_range_vector, __pyx_v_velocity_vector, __pyx_v_velocity, __pyx_v_mach, __pyx_t_10, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.look_angle, __pyx_v_density_factor, __pyx_v_drag, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.weight, __pyx_e_14EulerBallistic_15trajectory_data_NONE);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 426, __pyx_L1_error)</span>
+<pre class='cython code score-3 '>    __pyx_t_5 = __pyx_f_16CyEulerBallistic_15trajectory_calc_create_trajectory_row(__pyx_v_time, __pyx_v_range_vector, __pyx_v_velocity_vector, __pyx_v_velocity, __pyx_v_mach, __pyx_t_10, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.look_angle, __pyx_v_density_factor, __pyx_v_drag, __pyx_v_self-&gt;_EulerTrajectoryCalc__shot.weight, __pyx_e_16CyEulerBallistic_15trajectory_data_NONE);<span class='error_goto'> if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 426, __pyx_L1_error)</span>
     <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_5);
     __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_ranges, __pyx_t_5);<span class='error_goto'> if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(1, 426, __pyx_L1_error)</span>
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">427</span>:                 time, range_vector, velocity_vector,</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">428</span>:                 velocity, mach, cy_spin_drift(&amp;self.__shot, time), self.__shot.look_angle,</pre>
-<pre class='cython code score-0 '>    __pyx_t_10 = __pyx_f_14EulerBallistic_8cy_euler_cy_spin_drift((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot), __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 428, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>    __pyx_t_10 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_spin_drift((&amp;__pyx_v_self-&gt;_EulerTrajectoryCalc__shot), __pyx_v_time);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 428, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">429</span>:                 density_factor, drag, self.__shot.weight, CTrajFlag.NONE))</pre>
 <pre class="cython line score-26" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">430</span>:         logger.debug(f"euler cy it {it}")</pre>
 <pre class='cython code score-26 '>  <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_4, __pyx_n_s_logger);<span class='error_goto'> if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 430, __pyx_L1_error)</span>
@@ -3091,7 +3091,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 </pre><pre class="cython line score-0">&#xA0;<span class="">432</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">433</span>: </pre>
 <pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">434</span>: cdef object create_trajectory_row(double time, CVector range_vector, CVector velocity_vector,</pre>
-<pre class='cython code score-4 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc_create_trajectory_row(double __pyx_v_time, struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_range_vector, struct __pyx_t_14EulerBallistic_6vector_CVector __pyx_v_velocity_vector, double __pyx_v_velocity, double __pyx_v_mach, double __pyx_v_spin_drift, double __pyx_v_look_angle, double __pyx_v_density_factor, double __pyx_v_drag, double __pyx_v_weight, int __pyx_v_flag) {
+<pre class='cython code score-4 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc_create_trajectory_row(double __pyx_v_time, struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_range_vector, struct __pyx_t_16CyEulerBallistic_6vector_CVector __pyx_v_velocity_vector, double __pyx_v_velocity, double __pyx_v_mach, double __pyx_v_spin_drift, double __pyx_v_look_angle, double __pyx_v_density_factor, double __pyx_v_drag, double __pyx_v_weight, int __pyx_v_flag) {
   double __pyx_v_windage;
   double __pyx_v_drop_adjustment;
   double __pyx_v_windage_adjustment;
@@ -3102,7 +3102,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   __pyx_L1_error:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc.create_trajectory_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc.create_trajectory_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
@@ -3116,10 +3116,10 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">439</span>:         double windage = range_vector.z + spin_drift</pre>
 <pre class='cython code score-0 '>  __pyx_v_windage = (__pyx_v_range_vector.z + __pyx_v_spin_drift);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">440</span>:         double drop_adjustment = cy_get_correction(range_vector.x, range_vector.y)</pre>
-<pre class='cython code score-0 '>  __pyx_t_1 = __pyx_f_14EulerBallistic_8cy_euler_cy_get_correction(__pyx_v_range_vector.x, __pyx_v_range_vector.y);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 440, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_t_1 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_get_correction(__pyx_v_range_vector.x, __pyx_v_range_vector.y);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 440, __pyx_L1_error)</span>
   __pyx_v_drop_adjustment = __pyx_t_1;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">441</span>:         double windage_adjustment = cy_get_correction(range_vector.x, windage)</pre>
-<pre class='cython code score-0 '>  __pyx_t_1 = __pyx_f_14EulerBallistic_8cy_euler_cy_get_correction(__pyx_v_range_vector.x, __pyx_v_windage);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 441, __pyx_L1_error)</span>
+<pre class='cython code score-0 '>  __pyx_t_1 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_get_correction(__pyx_v_range_vector.x, __pyx_v_windage);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 441, __pyx_L1_error)</span>
   __pyx_v_windage_adjustment = __pyx_t_1;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">442</span>:         double trajectory_angle = atan2(velocity_vector.y, velocity_vector.x);</pre>
 <pre class='cython code score-0 '>  __pyx_v_trajectory_angle = atan2(__pyx_v_velocity_vector.y, __pyx_v_velocity_vector.x);
@@ -3127,7 +3127,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 <pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">444</span>:     return TrajectoryData(</pre>
 <pre class='cython code score-4 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
 /* … */
-  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_14EulerBallistic_15trajectory_data_TrajectoryData), __pyx_empty_tuple, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 444, __pyx_L1_error)</span>
+  __pyx_t_3 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_16CyEulerBallistic_15trajectory_data_TrajectoryData), __pyx_empty_tuple, __pyx_t_2);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 444, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_3;
@@ -3141,12 +3141,12 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_time, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">446</span>:         distance=_new_feet(range_vector.x),</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_feet(__pyx_v_range_vector.x);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 446, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_feet(__pyx_v_range_vector.x);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 446, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_distance, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">447</span>:         velocity=_new_fps(velocity),</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_fps(__pyx_v_velocity);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 447, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_fps(__pyx_v_velocity);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 447, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_velocity, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
@@ -3156,12 +3156,12 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_mach, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">449</span>:         height=_new_feet(range_vector.y),</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_feet(__pyx_v_range_vector.y);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 449, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_feet(__pyx_v_range_vector.y);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 449, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_height, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">450</span>:         target_drop=_new_feet(</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_feet(((__pyx_v_range_vector.y - (__pyx_v_range_vector.x * tan(__pyx_v_look_angle))) * cos(__pyx_v_look_angle)));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 450, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_feet(((__pyx_v_range_vector.y - (__pyx_v_range_vector.x * tan(__pyx_v_look_angle))) * cos(__pyx_v_look_angle)));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 450, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_target_drop, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
@@ -3174,27 +3174,27 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   } else {
     __pyx_t_1 = 0.0;
   }
-  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_rad((__pyx_v_drop_adjustment - __pyx_t_1));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 453, __pyx_L1_error)</span>
+  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_rad((__pyx_v_drop_adjustment - __pyx_t_1));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 453, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_drop_adj, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">454</span>:         windage=_new_feet(windage),</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_feet(__pyx_v_windage);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 454, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_feet(__pyx_v_windage);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 454, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_windage, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">455</span>:         windage_adj=_new_rad(windage_adjustment),</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_rad(__pyx_v_windage_adjustment);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 455, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_rad(__pyx_v_windage_adjustment);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 455, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_windage_adj, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">456</span>:         look_distance=_new_feet(range_vector.x / cos(look_angle)),</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_feet((__pyx_v_range_vector.x / cos(__pyx_v_look_angle)));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 456, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_feet((__pyx_v_range_vector.x / cos(__pyx_v_look_angle)));<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 456, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_look_distance, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">457</span>:         angle=_new_rad(trajectory_angle),</pre>
-<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_rad(__pyx_v_trajectory_angle);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 457, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_rad(__pyx_v_trajectory_angle);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 457, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_angle, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
@@ -3209,14 +3209,14 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_drag, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">460</span>:         energy=_new_ft_lb(cy_calculate_energy(weight, velocity)),</pre>
-<pre class='cython code score-6 '>  __pyx_t_1 = __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_energy(__pyx_v_weight, __pyx_v_velocity);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 460, __pyx_L1_error)</span>
-  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_ft_lb(__pyx_t_1);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 460, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_1 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_energy(__pyx_v_weight, __pyx_v_velocity);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 460, __pyx_L1_error)</span>
+  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_ft_lb(__pyx_t_1);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 460, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_energy, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
 </pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">461</span>:         ogw=_new_lb(cy_calculate_ogw(weight, velocity)),</pre>
-<pre class='cython code score-6 '>  __pyx_t_1 = __pyx_f_14EulerBallistic_8cy_euler_cy_calculate_ogw(__pyx_v_weight, __pyx_v_velocity);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 461, __pyx_L1_error)</span>
-  __pyx_t_3 = __pyx_f_14EulerBallistic_15trajectory_calc__new_lb(__pyx_t_1);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 461, __pyx_L1_error)</span>
+<pre class='cython code score-6 '>  __pyx_t_1 = __pyx_f_16CyEulerBallistic_8cy_euler_cy_calculate_ogw(__pyx_v_weight, __pyx_v_velocity);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 461, __pyx_L1_error)</span>
+  __pyx_t_3 = __pyx_f_16CyEulerBallistic_15trajectory_calc__new_lb(__pyx_t_1);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 461, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_2, __pyx_n_s_ogw, __pyx_t_3) &lt; 0) <span class='error_goto'>__PYX_ERR(1, 445, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
@@ -3229,7 +3229,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 <pre class="cython line score-0">&#xA0;<span class="">464</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">465</span>: </pre>
 <pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">466</span>: cdef object _new_feet(double v):</pre>
-<pre class='cython code score-7 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc__new_feet(double __pyx_v_v) {
+<pre class='cython code score-7 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc__new_feet(double __pyx_v_v) {
   PyObject *__pyx_v_d = NULL;
   PyObject *__pyx_r = NULL;
 /* … */
@@ -3239,7 +3239,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._new_feet", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._new_feet", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_d);
@@ -3298,7 +3298,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 </pre><pre class="cython line score-0">&#xA0;<span class="">471</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">472</span>: </pre>
 <pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">473</span>: cdef object _new_fps(double v):</pre>
-<pre class='cython code score-7 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc__new_fps(double __pyx_v_v) {
+<pre class='cython code score-7 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc__new_fps(double __pyx_v_v) {
   PyObject *__pyx_v_d = NULL;
   PyObject *__pyx_r = NULL;
 /* … */
@@ -3308,7 +3308,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._new_fps", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._new_fps", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_d);
@@ -3367,7 +3367,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 </pre><pre class="cython line score-0">&#xA0;<span class="">478</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">479</span>: </pre>
 <pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">480</span>: cdef object _new_rad(double v):</pre>
-<pre class='cython code score-7 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc__new_rad(double __pyx_v_v) {
+<pre class='cython code score-7 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc__new_rad(double __pyx_v_v) {
   PyObject *__pyx_v_d = NULL;
   PyObject *__pyx_r = NULL;
 /* … */
@@ -3377,7 +3377,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._new_rad", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._new_rad", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_d);
@@ -3436,7 +3436,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 </pre><pre class="cython line score-0">&#xA0;<span class="">485</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">486</span>: </pre>
 <pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">487</span>: cdef object _new_ft_lb(double v):</pre>
-<pre class='cython code score-7 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc__new_ft_lb(double __pyx_v_v) {
+<pre class='cython code score-7 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc__new_ft_lb(double __pyx_v_v) {
   PyObject *__pyx_v_d = NULL;
   PyObject *__pyx_r = NULL;
 /* … */
@@ -3446,7 +3446,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._new_ft_lb", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._new_ft_lb", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_d);
@@ -3505,7 +3505,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
 </pre><pre class="cython line score-0">&#xA0;<span class="">492</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">493</span>: </pre>
 <pre class="cython line score-7" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">494</span>: cdef object _new_lb(double v):</pre>
-<pre class='cython code score-7 '>static PyObject *__pyx_f_14EulerBallistic_15trajectory_calc__new_lb(double __pyx_v_v) {
+<pre class='cython code score-7 '>static PyObject *__pyx_f_16CyEulerBallistic_15trajectory_calc__new_lb(double __pyx_v_v) {
   PyObject *__pyx_v_d = NULL;
   PyObject *__pyx_r = NULL;
 /* … */
@@ -3515,7 +3515,7 @@ struct __pyx_opt_args_14EulerBallistic_15trajectory_calc_19EulerTrajectoryCalc__
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("EulerBallistic.trajectory_calc._new_lb", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("CyEulerBallistic.trajectory_calc._new_lb", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_d);

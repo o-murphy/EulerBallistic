@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def cleanup():
-    root_dir = Path("./EulerBallistic")
+    root_dir = Path("./CyEulerBallistic")
     for path in root_dir.rglob("*"):  # Matches all files and directories recursively
         if path.is_file():
             if path.suffix in {".pyd", ".c", ".html"}:
